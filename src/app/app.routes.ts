@@ -5,7 +5,6 @@ import { Food } from './food/food';
 import { Cocktails } from './cocktails/cocktails';
 import { Enoteca } from './enoteca/enoteca';
 import { Gallery } from './gallery/gallery';
-import { Admin } from './admin/admin';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -16,5 +15,5 @@ export const routes: Routes = [
     {path: 'cocktails', component: Cocktails},
     {path: 'enoteca', component: Enoteca},
     {path: 'wines', redirectTo: '/enoteca', pathMatch: 'full'},
-    {path: 'admin-villa-luisetta-2024', component: Admin}
+    {path: 'admin-villa-luisetta-2024', loadComponent: () => import('./admin/admin').then(m => m.Admin)}
 ];
