@@ -1,0 +1,322 @@
+<div class="admin-container">
+  
+  <!-- Login Screen -->
+  <div class="login-screen" *ngIf="!isAuthenticated">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>🔐 Admin Panel</h1>
+        <p>Accesso riservato ai proprietari</p>
+      </div>
+      <form (ngSubmit)="authenticate()" class="login-form">
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input 
+            type="password" 
+            id="password"
+            [(ngModel)]="password" 
+            name="password"
+            placeholder="Inserisci la password"
+            required>
+        </div>
+        <button type="submit" class="login-btn">Accedi</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div class="admin-dashboard" *ngIf="isAuthenticated">
+    
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="header-content">
+        <h1>🏛️ Villa Luisetta - Admin Panel</h1>
+        <div class="header-actions">
+          <button (click)="exportData()" class="export-btn">📥 Esporta Dati</button>
+          <input type="file" (change)="importData($event)" accept=".json" style="display: none" #fileInput>
+          <button (click)="fileInput.click()" class="import-btn">📤 Importa Dati</button>
+          <button (click)="logout()" class="logout-btn">🚪 Esci</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="admin-nav">
+      <button 
+        class="nav-tab" 
+        [class.active]="activeTab === 'food'"
+        (click)="setActiveTab('food')">
+        🍽️ Menu Cibo
+      </button>
+      <button 
+        class="nav-tab" 
+        [class.active]="activeTab === 'wine'"
+        (click)="setActiveTab('wine')">
+        🍷 Menu Vini
+      </button>
+    </nav>
+
+    <!-- Food Menu Management -->
+    <div class="tab-content" *ngIf="activeTab === 'food'">
+      <div class="content-header">
+        <h2>Gestione Menu Cibo</h2>
+        <p>Aggiungi, modifica o rimuovi piatti dal menu</p>
+      </div>
+
+      <!-- Add/Edit Food Form -->
+      <div class="form-card">
+        <h3>{{ newFoodItem.id ? 'Modifica Piatto' : 'Nuovo Piatto' }}</h3>
+        <form class="item-form">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="foodName">Nome Piatto *</label>
+              <input 
+                type="text" 
+                id="foodName"
+                [(ngModel)]="newFoodItem.name" 
+                name="foodName"
+                placeholder="Es. Pasta alla Norma"
+                required>
+            </div>
+            <div class="input-group">
+              <label for="foodPrice">Prezzo *</label>
+              <input 
+                type="text" 
+                id="foodPrice"
+                [(ngModel)]="newFoodItem.price" 
+                name="foodPrice"
+                placeholder="Es. €15"
+                required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group">
+              <label for="foodCategory">Categoria</label>
+              <select id="foodCategory" [(ngModel)]="newFoodItem.category" name="foodCategory">
+                <option *ngFor="let category of foodCategories" [value]="category">
+                  {{ category | titlecase }}
+                </option>
+              </select>
+            </div>
+            <div class="input-group checkbox-group">
+              <label>
+                <input 
+                  type="checkbox" 
+                  [(ngModel)]="newFoodItem.available" 
+                  name="foodAvailable">
+                Disponibile
+              </label>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="foodDescription">Descrizione</label>
+            <textarea 
+              id="foodDescription"
+              [(ngModel)]="newFoodItem.description" 
+              name="foodDescription"
+              placeholder="Descrizione del piatto"
+              rows="3"></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button 
+              type="button" 
+              *ngIf="!newFoodItem.id"
+              (click)="addFoodItem()" 
+              class="add-btn">
+              ➕ Aggiungi Piatto
+            </button>
+            <button 
+              type="button" 
+              *ngIf="newFoodItem.id"
+              (click)="updateFoodItem()" 
+              class="update-btn">
+              ✏️ Aggiorna Piatto
+            </button>
+            <button 
+              type="button" 
+              (click)="resetNewFoodItem()" 
+              class="cancel-btn">
+              ❌ Annulla
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Food Items List -->
+      <div class="items-list">
+        <h3>Piatti Attuali ({{ foodItems.length }})</h3>
+        <div class="items-grid" *ngIf="foodItems.length > 0">
+          <div class="item-card" *ngFor="let item of foodItems" [class.unavailable]="!item.available">
+            <div class="item-header">
+              <h4>{{ item.name }}</h4>
+              <span class="item-price">{{ item.price }}</span>
+            </div>
+            <div class="item-meta">
+              <span class="item-category">{{ item.category | titlecase }}</span>
+              <span class="item-status" [class.available]="item.available">
+                {{ item.available ? '✅ Disponibile' : '❌ Non Disponibile' }}
+              </span>
+            </div>
+            <p class="item-description">{{ item.description }}</p>
+            <div class="item-actions">
+              <button (click)="editFoodItem(item)" class="edit-btn">✏️ Modifica</button>
+              <button (click)="toggleFoodAvailability(item.id)" class="toggle-btn">
+                {{ item.available ? '🚫 Disabilita' : '✅ Abilita' }}
+              </button>
+              <button (click)="deleteFoodItem(item.id)" class="delete-btn">🗑️ Elimina</button>
+            </div>
+          </div>
+        </div>
+        <div class="empty-state" *ngIf="foodItems.length === 0">
+          <p>📝 Nessun piatto presente. Aggiungi il primo piatto!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wine Menu Management -->
+    <div class="tab-content" *ngIf="activeTab === 'wine'">
+      <div class="content-header">
+        <h2>Gestione Menu Vini</h2>
+        <p>Aggiungi, modifica o rimuovi vini dalla carta</p>
+      </div>
+
+      <!-- Add/Edit Wine Form -->
+      <div class="form-card">
+        <h3>{{ newWineItem.id ? 'Modifica Vino' : 'Nuovo Vino' }}</h3>
+        <form class="item-form">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="wineName">Nome Vino *</label>
+              <input 
+                type="text" 
+                id="wineName"
+                [(ngModel)]="newWineItem.name" 
+                name="wineName"
+                placeholder="Es. Cirò Rosso"
+                required>
+            </div>
+            <div class="input-group">
+              <label for="winePrice">Prezzo *</label>
+              <input 
+                type="text" 
+                id="winePrice"
+                [(ngModel)]="newWineItem.price" 
+                name="winePrice"
+                placeholder="Es. €25"
+                required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group">
+              <label for="wineType">Tipo</label>
+              <select id="wineType" [(ngModel)]="newWineItem.type" name="wineType">
+                <option *ngFor="let type of wineTypes" [value]="type">
+                  {{ type | titlecase }}
+                </option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="wineRegion">Regione</label>
+              <input 
+                type="text" 
+                id="wineRegion"
+                [(ngModel)]="newWineItem.region" 
+                name="wineRegion"
+                placeholder="Es. Calabria">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group">
+              <label for="wineYear">Anno</label>
+              <input 
+                type="text" 
+                id="wineYear"
+                [(ngModel)]="newWineItem.year" 
+                name="wineYear"
+                placeholder="Es. 2021">
+            </div>
+            <div class="input-group checkbox-group">
+              <label>
+                <input 
+                  type="checkbox" 
+                  [(ngModel)]="newWineItem.available" 
+                  name="wineAvailable">
+                Disponibile
+              </label>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="wineDescription">Descrizione</label>
+            <textarea 
+              id="wineDescription"
+              [(ngModel)]="newWineItem.description" 
+              name="wineDescription"
+              placeholder="Descrizione del vino"
+              rows="3"></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button 
+              type="button" 
+              *ngIf="!newWineItem.id"
+              (click)="addWineItem()" 
+              class="add-btn">
+              ➕ Aggiungi Vino
+            </button>
+            <button 
+              type="button" 
+              *ngIf="newWineItem.id"
+              (click)="updateWineItem()" 
+              class="update-btn">
+              ✏️ Aggiorna Vino
+            </button>
+            <button 
+              type="button" 
+              (click)="resetNewWineItem()" 
+              class="cancel-btn">
+              ❌ Annulla
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Wine Items List -->
+      <div class="items-list">
+        <h3>Vini Attuali ({{ wineItems.length }})</h3>
+        <div class="items-grid" *ngIf="wineItems.length > 0">
+          <div class="item-card" *ngFor="let item of wineItems" [class.unavailable]="!item.available">
+            <div class="item-header">
+              <h4>{{ item.name }}</h4>
+              <span class="item-price">{{ item.price }}</span>
+            </div>
+            <div class="item-meta">
+              <span class="item-category">{{ item.type | titlecase }}</span>
+              <span class="item-region" *ngIf="item.region">{{ item.region }}</span>
+              <span class="item-year" *ngIf="item.year">{{ item.year }}</span>
+              <span class="item-status" [class.available]="item.available">
+                {{ item.available ? '✅ Disponibile' : '❌ Non Disponibile' }}
+              </span>
+            </div>
+            <p class="item-description">{{ item.description }}</p>
+            <div class="item-actions">
+              <button (click)="editWineItem(item)" class="edit-btn">✏️ Modifica</button>
+              <button (click)="toggleWineAvailability(item.id)" class="toggle-btn">
+                {{ item.available ? '🚫 Disabilita' : '✅ Abilita' }}
+              </button>
+              <button (click)="deleteWineItem(item.id)" class="delete-btn">🗑️ Elimina</button>
+            </div>
+          </div>
+        </div>
+        <div class="empty-state" *ngIf="wineItems.length === 0">
+          <p>🍷 Nessun vino presente. Aggiungi il primo vino!</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

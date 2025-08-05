@@ -1,0 +1,417 @@
+/* ========================================
+   COCKTAILS PAGE - MOBILE-FIRST RESPONSIVE DESIGN
+======================================== */
+
+.cocktails-container {
+    min-height: 100vh;
+    background: var(--primary-burgundy);
+    color: var(--pure-white);
+    font-family: 'Inter', sans-serif;
+    padding-top: 80px;
+}
+
+/* ========================================
+   MAIN CONTENT LAYOUT
+======================================== */
+
+.main-content {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--pure-white);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--pure-white) 0%, var(--french-laundry-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.hero-ornament {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--french-laundry-gold) 50%, transparent 100%);
+    margin: 2rem auto;
+    border: none;
+}
+
+/* ========================================
+   COCKTAILS GRID LAYOUT
+======================================== */
+
+.cocktails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.cocktail-item {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.cocktail-item:hover {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    transform: translateY(-2px);
+    border-color: rgba(201, 169, 97, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.item-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: var(--pure-white);
+    margin: 0 0 0.5rem 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.cocktail-item:hover .item-name {
+    color: var(--french-laundry-gold);
+}
+
+.item-price {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--french-laundry-gold);
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.item-description {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   ALLERGENS SECTION
+======================================== */
+
+.allergens-animation {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(201, 169, 97, 0.1);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.allergens-animation.show {
+    max-height: 150px;
+    opacity: 1;
+    padding: 1rem;
+}
+
+.allergens-details h4 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1rem;
+    color: var(--french-laundry-gold);
+    margin: 0 0 0.5rem 0;
+}
+
+.allergens-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.allergen-tag {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: var(--pure-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.allergen-tag:hover {
+    background: rgba(201, 169, 97, 0.3);
+    border-color: var(--french-laundry-gold);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZED
+======================================== */
+
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+    .cocktails-container {
+        padding-top: 70px;
+    }
+    
+    .main-content {
+        padding: 4rem 1.5rem 3rem;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-ornament {
+        width: 60px;
+        margin: 1.5rem auto;
+    }
+    
+    .cocktails-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .cocktail-item {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .item-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .item-name {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .item-price {
+        font-size: 1.1rem;
+        align-self: center;
+        background: rgba(201, 169, 97, 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        border: 1px solid rgba(201, 169, 97, 0.2);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .item-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+/* Mobile - 480px and below */
+@media (max-width: 480px) {
+    .cocktails-container {
+        padding-top: 65px;
+    }
+    
+    .main-content {
+        padding: 3rem 1rem 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+    
+    .hero-ornament {
+        width: 50px;
+        margin: 1rem auto;
+    }
+    
+    .cocktails-grid {
+        gap: 1.2rem;
+    }
+    
+    .cocktail-item {
+        padding: 1.2rem;
+        border-radius: 10px;
+    }
+    
+    .item-header {
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .item-name {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.2;
+    }
+    
+    .item-price {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+    }
+    
+    .item-description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.3rem;
+    }
+    
+    .allergens-animation {
+        margin-top: 0.8rem;
+    }
+    
+    .allergens-animation.show {
+        max-height: 120px;
+        padding: 0.8rem;
+    }
+    
+    .allergen-tag {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+}
+
+/* Extra small mobile - 320px and below */
+@media (max-width: 320px) {
+    .cocktails-container {
+        padding-top: 60px;
+    }
+    
+    .main-content {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+        padding: 0 0.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cocktails-grid {
+        gap: 1rem;
+    }
+    
+    .cocktail-item {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .item-name {
+        font-size: 1rem;
+    }
+    
+    .item-price {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .item-description {
+        font-size: 0.75rem;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & PERFORMANCE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .cocktail-item,
+    .allergens-animation,
+    .item-name,
+    .item-price,
+    .allergen-tag {
+        transition: none !important;
+    }
+}
+
+.cocktail-item:focus {
+    outline: 2px solid var(--french-laundry-gold);
+    outline-offset: 2px;
+}
+
+@media (prefers-contrast: high) {
+    .cocktail-item {
+        border: 2px solid #ffffff;
+        background: rgba(0, 0, 0, 0.9) !important;
+    }
+    
+    .item-name,
+    .item-description {
+        color: #ffffff !important;
+    }
+    
+    .item-price {
+        color: #ffff00 !important;
+    }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+    .cocktail-item {
+        min-height: 60px;
+        cursor: pointer;
+    }
+    
+    .cocktail-item:hover {
+        transform: none;
+    }
+    
+    .cocktail-item:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}

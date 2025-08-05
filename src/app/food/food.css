@@ -1,0 +1,790 @@
+/* ========================================
+   APERICENA MENU - ELEGANT & ACCESSIBLE DESIGN
+======================================== */
+
+.food-container {
+    min-height: 100vh;
+    background: var(--primary-burgundy);
+    color: var(--pure-white);
+    font-family: 'Inter', sans-serif;
+    padding-top: 80px;
+}
+
+/* ========================================
+   MAIN CONTENT LAYOUT
+======================================== */
+
+.main-content {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--pure-white);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--pure-white) 0%, var(--french-laundry-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.hero-ornament {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--french-laundry-gold), transparent);
+    margin: 2rem auto;
+    border: none;
+}
+
+/* ========================================
+   MENU SECTION - IMPROVED LAYOUT
+======================================== */
+
+.menu-section {
+    margin-bottom: 4rem;
+}
+
+.menu-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(201, 169, 97, 0.5);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card.selected {
+    border-color: var(--french-laundry-gold);
+    background: rgba(201, 169, 97, 0.1);
+    box-shadow: 0 10px 25px rgba(201, 169, 97, 0.2);
+}
+
+/* ========================================
+   MENU HEADER - REDESIGNED
+======================================== */
+
+.menu-header {
+    padding: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.menu-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.menu-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--french-laundry-gold);
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.menu-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pure-white);
+    background: linear-gradient(45deg, var(--french-laundry-gold), #d4af37);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+}
+
+.expand-icon {
+    color: var(--french-laundry-gold);
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+}
+
+.expand-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.expand-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* ========================================
+   MENU DETAILS - COMPLETE REDESIGN
+======================================== */
+
+.menu-details {
+    padding: 0 2.5rem 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   BEVERAGE SECTION
+======================================== */
+
+.beverage-section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border-left: 4px solid var(--french-laundry-gold);
+}
+
+.section-header {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--french-laundry-gold);
+    margin: 0;
+}
+
+.section-icon {
+    font-size: 1.6rem;
+}
+
+.beverage-content {
+    margin-top: 1rem;
+}
+
+.beverage-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ========================================
+   DISHES SECTION - CARD-BASED LAYOUT
+======================================== */
+
+.dishes-section {
+    margin-top: 2rem;
+}
+
+.dishes-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.dish-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dish-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(201, 169, 97, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dish-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, var(--french-laundry-gold), #d4af37);
+    color: #000;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+}
+
+.dish-content {
+    flex: 1;
+}
+
+.dish-header {
+    margin-bottom: 0.75rem;
+}
+
+.dish-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--pure-white);
+    margin: 0;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.frozen-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #ff6b6b;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: help;
+}
+
+/* ========================================
+   INGREDIENTS SECTION
+======================================== */
+
+.dish-ingredients {
+    margin-bottom: 1rem;
+}
+
+.ingredients-text {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.allergen-highlight {
+    color: #ffa726;
+    font-weight: 600;
+    background: rgba(255, 167, 38, 0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 167, 38, 0.2);
+}
+
+/* ========================================
+   ALLERGENS SECTION
+======================================== */
+
+.dish-allergens {
+    margin-top: 1rem;
+}
+
+.allergens-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.allergen-icon {
+    font-size: 1.2rem;
+}
+
+.allergen-label {
+    font-weight: 600;
+    color: #ffa726;
+    font-size: 0.95rem;
+}
+
+.allergen-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.allergen-tag {
+    background: rgba(255, 167, 38, 0.2);
+    color: #ffcc80;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 167, 38, 0.3);
+    transition: all 0.3s ease;
+}
+
+.allergen-tag:hover {
+    background: rgba(255, 167, 38, 0.3);
+    border-color: #ffa726;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   DESSERTS & BEVERAGES SECTIONS
+======================================== */
+
+.desserts-section, .beverages-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2.5rem;
+    color: var(--french-laundry-gold);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dessert-grid, .beverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dessert-card, .beverage-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.dessert-card:hover, .beverage-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--french-laundry-gold);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dessert-header, .beverage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.dessert-name, .beverage-name {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.dessert-price, .beverage-price {
+    color: var(--french-laundry-gold);
+    font-weight: 700;
+    background: rgba(201, 169, 97, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.dessert-ingredients, .beverage-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.dessert-allergens {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   LEGAL SECTION
+======================================== */
+
+.legal-section {
+    margin-bottom: 4rem;
+}
+
+.disclaimer-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid #ffc107;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.disclaimer-card h3 {
+    color: #ffc107;
+    margin-bottom: 1.5rem;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.6rem;
+}
+
+.disclaimer-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.disclaimer-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   CTA SECTION
+======================================== */
+
+.cta-section {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2.5rem;
+    color: var(--french-laundry-gold);
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(45deg, var(--french-laundry-gold), #d4af37);
+    color: #000;
+}
+
+.cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--pure-white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.primary:hover {
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+}
+
+.cta-icon {
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   FOOTER STYLES
+======================================== */
+
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.footer-section h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--french-laundry-gold);
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-icon {
+    color: var(--french-laundry-gold);
+    font-size: 1rem;
+    min-width: 20px;
+}
+
+.address-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.address-link:hover {
+    color: var(--french-laundry-gold);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(201, 169, 97, 0.2);
+    border-color: var(--french-laundry-gold);
+    transform: translateY(-3px);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--pure-white);
+    fill: currentColor;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1024px) {
+    .dishes-grid {
+        gap: 1.2rem;
+    }
+    
+    .dish-card {
+        padding: 1.25rem;
+    }
+    
+    .menu-info {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .menu-header {
+        padding: 2rem;
+    }
+    
+    .menu-details {
+        padding: 0 2rem 2rem;
+    }
+    
+    .beverage-section {
+        padding: 1.5rem;
+    }
+    
+    .dish-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .dish-number {
+        margin: 0 auto 1rem;
+    }
+    
+    .dessert-grid, .beverage-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section {
+        padding: 2rem 1rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .menu-title {
+        font-size: 1.5rem;
+    }
+    
+    .menu-price {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .dish-name {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .disclaimer-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+}

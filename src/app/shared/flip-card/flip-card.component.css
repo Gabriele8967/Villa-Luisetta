@@ -1,0 +1,281 @@
+/* ========================================
+   FLIP CARD - SISTEMA UNIVERSALE CROSS-BROWSER
+======================================== */
+
+.flip-card-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+/* ========================================
+   3D FLIP IMPLEMENTATION (Chrome, Safari, Edge)
+======================================== */
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.flip-card-container.flipped.support-3d .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.support-3d .flip-card-front,
+.support-3d .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  transform-origin: center;
+}
+
+.support-3d .flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* ========================================
+   FALLBACK IMPLEMENTATION (Firefox, vecchi browser)
+======================================== */
+
+.flip-card-fallback {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-fallback .flip-card-front,
+.flip-card-fallback .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0); /* Forza GPU layer */
+}
+
+.flip-card-fallback .flip-card-front {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateZ(0);
+  z-index: 2;
+}
+
+.flip-card-fallback .flip-card-back {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateZ(0);
+  z-index: 1;
+}
+
+.flip-card-fallback .flip-card-front.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateZ(0);
+  z-index: 1;
+}
+
+.flip-card-fallback .flip-card-back.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateZ(0);
+  z-index: 2;
+}
+
+/* ========================================
+   INTERACTIVE STATES
+======================================== */
+
+.flip-card-container:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-card-container:active {
+  transform: translateY(0) scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Stato disabilitato */
+.flip-card-container[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.flip-card-container[disabled]:hover {
+  transform: none;
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+======================================== */
+
+@media (max-width: 768px) {
+  .flip-card-container {
+    perspective: 800px;
+  }
+  
+  .flip-card-inner {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .flip-card-fallback .flip-card-front,
+  .flip-card-fallback .flip-card-back {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Rimuovi hover su mobile per migliori performance */
+  .flip-card-container:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+======================================== */
+
+.flip-card-front,
+.flip-card-back {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Crea layer GPU */
+  backface-visibility: hidden;
+}
+
+/* Migliora rendering durante animazione */
+.flip-card-container.flipped .flip-card-inner,
+.flip-card-fallback .flip-card-front.hidden,
+.flip-card-fallback .flip-card-back.visible {
+  will-change: transform;
+}
+
+/* Reset will-change dopo animazione */
+.flip-card-inner {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              will-change 0s 0.8s;
+}
+
+.flip-card-fallback .flip-card-front,
+.flip-card-fallback .flip-card-back {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              will-change 0s 0.6s;
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner,
+  .flip-card-fallback .flip-card-front,
+  .flip-card-fallback .flip-card-back {
+    transition: none !important;
+  }
+  
+  .flip-card-container.flipped.support-3d .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-fallback .flip-card-front.hidden {
+    opacity: 0;
+    transform: scale(1) translateZ(0);
+  }
+  
+  .flip-card-fallback .flip-card-back.visible {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+}
+
+/* Focus state per accessibilità */
+.flip-card-container:focus {
+  outline: 2px solid var(--french-laundry-gold);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   BROWSER-SPECIFIC FIXES
+======================================== */
+
+/* Firefox specifico - evita flickering */
+@-moz-document url-prefix() {
+  .support-3d .flip-card-front,
+  .support-3d .flip-card-back {
+    backface-visibility: visible;
+  }
+}
+
+/* Safari specifico - fix z-index durante flip */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .flip-card-inner {
+    -webkit-transform-style: preserve-3d;
+  }
+  
+  .support-3d .flip-card-front,
+  .support-3d .flip-card-back {
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* Edge specifico */
+@supports (-ms-ime-align: auto) {
+  .flip-card-container {
+    perspective: none;
+  }
+  
+  .flip-card-inner {
+    transform-style: flat;
+  }
+}
+
+/* ========================================
+   DEBUG MODE (attiva solo per sviluppo)
+======================================== */
+
+.flip-card-container.debug {
+  border: 2px dashed #ff0000;
+}
+
+.flip-card-container.debug .flip-card-front {
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.flip-card-container.debug .flip-card-back {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+/* ========================================
+   LOADING STATE
+======================================== */
+
+.flip-card-container.loading {
+  pointer-events: none;
+}
+
+.flip-card-container.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid var(--french-laundry-gold);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

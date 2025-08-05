@@ -1,0 +1,31 @@
+<div class="cocktails-container">
+  <!-- Navigation Unificata -->
+  <app-navigation></app-navigation>
+
+  <main class="main-content">
+    <div class="hero-section">
+      <h1 class="hero-title">Cocktail Bar</h1>
+      <p class="hero-subtitle">Selezione raffinata di cocktail per momenti di puro piacere</p>
+      <hr class="hero-ornament">
+    </div>
+
+    <div class="cocktails-grid">
+      <div class="cocktail-item" *ngFor="let item of cocktailItems" (click)="toggleAllergens(item.id)">
+        <div class="item-header">
+          <h3 class="item-name">{{ item.name }}</h3>
+          <span class="item-price">{{ item.price }}</span>
+        </div>
+        <p class="item-description">{{ item.description }}</p>
+        
+        <div class="allergens-animation" [class.show]="item.showAllergens">
+          <div class="allergens-details">
+            <h4>Allergeni</h4>
+            <div class="allergens-list">
+              <span class="allergen-tag" *ngFor="let allergen of item.allergens">{{ allergen }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

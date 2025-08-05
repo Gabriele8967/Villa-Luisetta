@@ -1,0 +1,20 @@
+import { Routes } from '@angular/router';
+import { Home } from './home/home';
+import { Apartments } from './apartments/apartments';
+import { Food } from './food/food';
+import { Cocktails } from './cocktails/cocktails';
+import { Enoteca } from './enoteca/enoteca';
+import { Gallery } from './gallery/gallery';
+import { Admin } from './admin/admin';
+
+export const routes: Routes = [
+    {path: '', component: Home},
+    {path: 'apartments', component: Apartments},
+    {path: 'gallery', component: Gallery},
+    {path: 'food', component: Food},
+    {path: 'menu', redirectTo: '/food', pathMatch: 'full'},
+    {path: 'cocktails', component: Cocktails},
+    {path: 'enoteca', component: Enoteca},
+    {path: 'wines', redirectTo: '/enoteca', pathMatch: 'full'},
+    {path: 'admin-villa-luisetta-2024', component: Admin}
+];

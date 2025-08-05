@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Luisetta - Apartments & Winery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-burgundy: #591A0B;
+            --pure-white: #ffffff;
+            --french-laundry-gold: #c9a961;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-burgundy);
+            color: var(--pure-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+            cursor: pointer;
+        }
+
+        .logo-text {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--french-laundry-gold);
+            transition: width 0.4s ease;
+        }
+
+        .logo:hover .logo-text::after {
+            width: 100%;
+        }
+
+        /* Touch device optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .logo:hover .logo-text::after {
+                width: 0;
+            }
+            .logo:active .logo-text::after {
+                width: 100%;
+                transition: width 0.1s ease;
+            }
+        }
+        
+        .logo-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--pure-white);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--french-laundry-gold);
+        }
+        
+        .main-content {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .hero-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--pure-white);
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-ornament {
+            width: 80px;
+            height: 1px;
+            background: var(--french-laundry-gold);
+            margin: 2rem auto;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .content-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .room-card, .menu-item, .wine-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .room-card:hover, .menu-item:hover, .wine-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+        
+        .item-name {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--pure-white);
+        }
+        
+        .item-price {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--french-laundry-gold);
+            white-space: nowrap;
+        }
+        
+        .item-description {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .main-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--pure-white);
+            padding: 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .main-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--french-laundry-gold);
+            transform: translateY(-2px);
+        }
+        
+        .button-text {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .button-subtitle {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo" onclick="showSection('home')" style="cursor: pointer;">
+            <div class="logo-text">Villa Luisetta</div>
+            <div class="logo-subtitle">Apartments & Winery</div>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link" onclick="showSection('gallery')">Camere</a>
+            <a href="#" class="nav-link" onclick="showSection('menu')">Menu Aperitivi</a>
+            <a href="#" class="nav-link" onclick="showSection('wines')">Carta Vini</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- HOME SECTION -->
+        <div id="home" class="section active">
+            <div class="hero-section">
+                <h1 class="hero-title">Tradizione in Evoluzione</h1>
+                <p class="hero-subtitle">Un viaggio culinario dove l'arte incontra la passione, nel cuore dell'eleganza italiana</p>
+                <div class="hero-ornament"></div>
+            </div>
+            
+            <div class="buttons-container">
+                <button class="main-button" onclick="showSection('gallery')">
+                    <div class="button-text">Camere</div>
+                    <div class="button-subtitle">Soggiorna in eleganza</div>
+                </button>
+                <button class="main-button" onclick="showSection('menu')">
+                    <div class="button-text">Ristorante</div>
+                    <div class="button-subtitle">Esperienza culinaria</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- GALLERY SECTION -->
+        <div id="gallery" class="section">
+            <div class="hero-section">
+                <h1 class="hero-title">Le Nostre Camere</h1>
+                <p class="hero-subtitle">Eleganza e comfort in ogni dettaglio per un soggiorno indimenticabile</p>
+                <div class="hero-ornament"></div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="room-card">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Suite Eleganza</h3>
+                            <p class="item-description">Camera matrimoniale di lusso con vista panoramica e jacuzzi privata</p>
+                        </div>
+                        <span class="item-price">€180/notte</span>
+                    </div>
+                </div>
+                
+                <div class="room-card">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Camera Deluxe</h3>
+                            <p class="item-description">Elegante camera doppia con arredi raffinati e tutti i comfort moderni</p>
+                        </div>
+                        <span class="item-price">€120/notte</span>
+                    </div>
+                </div>
+                
+                <div class="room-card">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Camera Superior</h3>
+                            <p class="item-description">Accogliente camera matrimoniale con vista giardino e bagno elegante</p>
+                        </div>
+                        <span class="item-price">€95/notte</span>
+                    </div>
+                </div>
+                
+                <div class="room-card">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Camera Standard</h3>
+                            <p class="item-description">Confortevole camera con tutti i servizi essenziali per un soggiorno piacevole</p>
+                        </div>
+                        <span class="item-price">€75/notte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU SECTION -->
+        <div id="menu" class="section">
+            <div class="hero-section">
+                <h1 class="hero-title">Menu Aperitivi</h1>
+                <p class="hero-subtitle">Selezione raffinata di cocktail e stuzzichini per momenti di puro piacere</p>
+                <div class="hero-ornament"></div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Negroni</h3>
+                        <span class="item-price">€8</span>
+                    </div>
+                    <p class="item-description">Gin, Campari, Vermouth rosso, scorza d'arancia</p>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Villa Luisetta</h3>
+                        <span class="item-price">€12</span>
+                    </div>
+                    <p class="item-description">Gin invecchiato, liquore alle erbe, sciroppo di miele, lime</p>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Aperol Spritz</h3>
+                        <span class="item-price">€7</span>
+                    </div>
+                    <p class="item-description">Aperol, Prosecco, soda, fetta d'arancia</p>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Bellini</h3>
+                        <span class="item-price">€9</span>
+                    </div>
+                    <p class="item-description">Pesca bianca, Prosecco di Valdobbiadene DOCG</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WINES SECTION -->
+        <div id="wines" class="section">
+            <div class="hero-section">
+                <h1 class="hero-title">Carta dei Vini</h1>
+                <p class="hero-subtitle">Selezione pregiata di eccellenze italiane per accompagnare ogni momento speciale</p>
+                <div class="hero-ornament"></div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="wine-item">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Chianti Classico DOCG</h3>
+                            <p class="item-description">Castello di Brolio - 2019. Equilibrato e strutturato, con note di ciliegia e spezie</p>
+                        </div>
+                        <span class="item-price">€35</span>
+                    </div>
+                </div>
+                
+                <div class="wine-item">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Barolo DOCG</h3>
+                            <p class="item-description">Giacomo Conterno - 2017. Potente e complesso, con tannini nobili e lunga persistenza</p>
+                        </div>
+                        <span class="item-price">€85</span>
+                    </div>
+                </div>
+                
+                <div class="wine-item">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Prosecco di Valdobbiadene DOCG</h3>
+                            <p class="item-description">Nino Franco. Perlage fine e persistente, fresco e aromatico</p>
+                        </div>
+                        <span class="item-price">€35</span>
+                    </div>
+                </div>
+                
+                <div class="wine-item">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-name">Brunello di Montalcino DOCG</h3>
+                            <p class="item-description">Banfi - 2018. Elegante e longevo, espressione pura del Sangiovese</p>
+                        </div>
+                        <span class="item-price">€75</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

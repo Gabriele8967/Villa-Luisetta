@@ -1,0 +1,104 @@
+<div class="apartments-container">
+  <!-- Navigation Unificata -->
+  <app-navigation></app-navigation>
+
+  <main class="main-content">
+    <!-- Hero Section Rinnovata -->
+    <section class="hero-showcase">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-line">I Nostri</span>
+          <span class="title-line highlight">Stanze</span>
+        </h1>
+        <p class="hero-description">
+          Scopri il comfort dei nostri appartamenti dove ogni dettaglio 
+          è curato per offrirti un soggiorno piacevole a Villa Luisetta
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Stanze Disponibili</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Soddisfazione Clienti</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+      </div>
+    </section>
+
+    <!-- Apartments Showcase -->
+    <section class="apartments-showcase">
+      <div class="showcase-header">
+        <h2 class="section-title">Scegli la Tua Stanza</h2>
+      </div>
+
+      <div class="apartments-masonry">
+        <div class="apartment-tile" 
+             *ngFor="let apartment of apartments; let i = index"
+             [style.animation-delay.ms]="i * 150">
+          
+          <!-- Apartment Card -->
+          <div class="tile-content">
+            
+            <!-- Main Info -->
+            <div class="tile-header">
+              <div class="room-type" [class]="getRoomTypeClass(apartment.id)">
+                {{ getRoomType(apartment.id) }}
+              </div>
+              <div class="price-badge">
+                <span class="price-amount">{{ apartment.price }}</span>
+              </div>
+            </div>
+
+            <div class="tile-body">
+              <h3 class="apartment-title">{{ apartment.name }}</h3>
+              <p class="apartment-size">{{ apartment.size }}</p>
+            </div>
+
+
+            <!-- Action Footer -->
+            <div class="tile-footer">
+              <button class="contact-btn-main" (click)="scrollToContact()">
+                <span class="btn-text">Contattaci</span>
+                <span class="btn-arrow">📞</span>
+              </button>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2 class="cta-title">Pronto per il Tuo Soggiorno?</h2>
+        <p class="cta-description">
+          Contattaci per ricevere informazioni e scoprire 
+          le nostre disponibilità per le tue date
+        </p>
+        <div class="cta-actions">
+          <a href="mailto:{{ contactInfo.email }}" class="cta-btn primary">
+            <span class="cta-icon">✉</span>
+            <span>Richiedi Disponibilità</span>
+          </a>
+          <a href="tel:+393806857597" class="cta-btn secondary">
+            <span class="cta-icon">📞</span>
+            <span>Chiamaci</span>
+          </a>
+        </div>
+      </div>
+      <div class="cta-decoration">
+        <div class="decoration-circle"></div>
+        <div class="decoration-line"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
