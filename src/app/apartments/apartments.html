@@ -54,9 +54,37 @@
               </div>
             </div>
 
-            <!-- Room Image -->
-            <div class="tile-image">
-              <img [src]="apartment.image" [alt]="apartment.name" class="room-image" loading="lazy">
+            <!-- Room Image Carousel -->
+            <div class="tile-image-carousel" (click)="openImageModal(apartment)">
+              <div class="carousel-container">
+                <img [src]="getCurrentImage(apartment)" 
+                     [alt]="apartment.name" 
+                     class="room-image" 
+                     loading="lazy">
+                
+                <!-- Carousel Navigation -->
+                <button class="carousel-btn carousel-btn-prev" 
+                        (click)="prevImage(apartment.id, $event)"
+                        *ngIf="apartment.images.length > 1">
+                  <span class="carousel-arrow">‹</span>
+                </button>
+                <button class="carousel-btn carousel-btn-next" 
+                        (click)="nextImage(apartment.id, $event)"
+                        *ngIf="apartment.images.length > 1">
+                  <span class="carousel-arrow">›</span>
+                </button>
+                
+                <!-- Image Counter -->
+                <div class="image-counter" *ngIf="apartment.images.length > 1">
+                  {{ getCarouselIndex(apartment.id) + 1 }} / {{ apartment.images.length }}
+                </div>
+                
+                <!-- Click indicator -->
+                <div class="click-indicator">
+                  <span class="indicator-icon">🔍</span>
+                  <span class="indicator-text">Clicca per vedere tutte le foto</span>
+                </div>
+              </div>
             </div>
 
             <div class="tile-body">
@@ -106,4 +134,59 @@
     </section>
 
   </main>
+
+  <!-- Image Modal -->
+  <div class="image-modal" 
+       *ngIf="showModal" 
+       (click)="closeModal()"
+       (keydown)="onModalKeydown($event)"
+       tabindex="0">
+    <div class="modal-overlay"></div>
+    
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="modal-title">{{ modalRoomName }}</h3>
+        <button class="modal-close" (click)="closeModal()">
+          <span>✕</span>
+        </button>
+      </div>
+      
+      <!-- Modal Image -->
+      <div class="modal-image-container">
+        <img [src]="modalImages[modalCurrentIndex]" 
+             [alt]="modalRoomName" 
+             class="modal-image">
+        
+        <!-- Modal Navigation -->
+        <button class="modal-nav-btn modal-prev" 
+                (click)="prevModalImage()"
+                *ngIf="modalImages.length > 1">
+          <span class="nav-arrow">‹</span>
+        </button>
+        <button class="modal-nav-btn modal-next" 
+                (click)="nextModalImage()"
+                *ngIf="modalImages.length > 1">
+          <span class="nav-arrow">›</span>
+        </button>
+        
+        <!-- Modal Counter -->
+        <div class="modal-counter" *ngIf="modalImages.length > 1">
+          {{ modalCurrentIndex + 1 }} di {{ modalImages.length }}
+        </div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="modal-footer" *ngIf="modalImages.length > 1">
+        <div class="modal-thumbnails">
+          <div class="thumbnail" 
+               *ngFor="let image of modalImages; let i = index"
+               [class.active]="i === modalCurrentIndex"
+               (click)="modalCurrentIndex = i">
+            <img [src]="image" [alt]="modalRoomName">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
