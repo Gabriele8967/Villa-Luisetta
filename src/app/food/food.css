@@ -181,10 +181,9 @@
 
 .beverage-section {
     margin-bottom: 2.5rem;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    border-left: 4px solid var(--french-laundry-gold);
+    padding: 1rem 0;
+    border-left: 2px solid var(--french-laundry-gold);
+    padding-left: 1rem;
 }
 
 .section-header {
