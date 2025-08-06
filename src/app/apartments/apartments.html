@@ -54,6 +54,11 @@
               </div>
             </div>
 
+            <!-- Room Image -->
+            <div class="tile-image">
+              <img [src]="apartment.image" [alt]="apartment.name" class="room-image" loading="lazy">
+            </div>
+
             <div class="tile-body">
               <h3 class="apartment-title">{{ apartment.name }}</h3>
               <p class="apartment-size">{{ apartment.size }}</p>

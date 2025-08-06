@@ -22,7 +22,8 @@ export class Apartments {
       description: '',
       price: '€80/persona/notte',
       category: 'superior',
-      size: '30m²'
+      size: '30m²',
+      image: 'rooms/Foto-stanza cilea/iniziale.jpeg'
     },
     {
       id: 2,
@@ -30,7 +31,8 @@ export class Apartments {
       description: '',
       price: '€65/persona/notte',
       category: 'classic',
-      size: '20m²'
+      size: '20m²',
+      image: 'rooms/Foto-stanza marinella/iniziale.jpeg'
     },
     {
       id: 3,
@@ -38,7 +40,8 @@ export class Apartments {
       description: '',
       price: '€80/persona/notte',
       category: 'superior',
-      size: '30m²'
+      size: '30m²',
+      image: 'rooms/Foto-stanza manfroce/iniziale.jpeg'
     },
     {
       id: 4,
@@ -46,7 +49,8 @@ export class Apartments {
       description: '',
       price: '€65/persona/notte',
       category: 'classic',
-      size: '20m²'
+      size: '20m²',
+      image: 'rooms/Foto-stanza rovaglioso/iniziale.jpeg'
     },
     {
       id: 5,
@@ -54,7 +58,8 @@ export class Apartments {
       description: '',
       price: '€80/persona/notte',
       category: 'superior',
-      size: '30m²'
+      size: '30m²',
+      image: 'rooms/Foto-stanza ulivarella/iniziale.jpeg'
     },
     {
       id: 6,
@@ -62,7 +67,8 @@ export class Apartments {
       description: '',
       price: '€80/persona/notte',
       category: 'superior',
-      size: '30m²'
+      size: '30m²',
+      image: 'rooms/Foto-stanza pietrenere/iniziale.jpeg'
     }
   ];
 
