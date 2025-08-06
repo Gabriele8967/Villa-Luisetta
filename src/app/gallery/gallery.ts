@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
 interface GalleryImage {
   src: string;
   alt: string;
-  title: string;
-  description: string;
   loaded: boolean;
 }
 
@@ -20,16 +18,16 @@ interface GalleryImage {
 })
 export class Gallery implements OnInit, OnDestroy {
   images: GalleryImage[] = [
-    { src: 'gallery/image0.jpeg', alt: 'Villa Luisetta - Esterno', title: 'Esterno di Villa Luisetta', description: 'La facciata elegante della nostra villa', loaded: false },
-    { src: 'gallery/image1.jpeg', alt: 'Villa Luisetta - Giardino', title: 'Giardino Panoramico', description: 'Vista mozzafiato sui nostri giardini curati', loaded: false },
-    { src: 'gallery/image2.jpeg', alt: 'Villa Luisetta - Terrazza', title: 'Terrazza Panoramica', description: 'Relax con vista sulla costa calabrese', loaded: false },
-    { src: 'gallery/image3.jpeg', alt: 'Villa Luisetta - Interni', title: 'Salotto Elegante', description: 'Ambienti raffinati per il vostro soggiorno', loaded: false },
-    { src: 'gallery/image4.jpeg', alt: 'Villa Luisetta - Camera', title: 'Camera Superior', description: 'Comfort e stile in ogni dettaglio', loaded: false },
-    { src: 'gallery/image5.jpeg', alt: 'Villa Luisetta - Cucina', title: 'Cucina Gourmet', description: 'Dove nascono i nostri piatti speciali', loaded: false },
-    { src: 'gallery/image6.jpeg', alt: 'Villa Luisetta - Sala da pranzo', title: 'Sala da Pranzo', description: 'Eleganza per le vostre cene speciali', loaded: false },
-    { src: 'gallery/image7.jpeg', alt: 'Villa Luisetta - Bar', title: 'American Bar', description: 'Cocktail e aperitivi di qualità', loaded: false },
-    { src: 'gallery/image8.jpeg', alt: 'Villa Luisetta - Enoteca', title: 'Enoteca', description: 'Selezione di vini pregiati calabresi', loaded: false },
-    { src: 'gallery/image9.jpeg', alt: 'Villa Luisetta - Tramonto', title: 'Tramonto dalla Villa', description: 'Momenti magici al calar del sole', loaded: false }
+    { src: 'gallery/image0.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image1.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image2.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image3.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image4.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image5.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image6.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image7.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image8.jpeg', alt: 'Villa Luisetta', loaded: false },
+    { src: 'gallery/image9.jpeg', alt: 'Villa Luisetta', loaded: false }
   ];
 
   selectedImageIndex: number | null = null;

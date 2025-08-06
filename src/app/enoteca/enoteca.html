@@ -25,16 +25,12 @@
           <div class="section-header" (click)="selectSection(section.id)">
             <div class="section-info">
               <h2 class="section-title">{{ section.title }}</h2>
-              <p class="section-subtitle">{{ section.subtitle }}</p>
             </div>
             <div class="expand-icon" [class.rotated]="isSectionSelected(section.id)">▼</div>
           </div>
           
           <!-- Section Content -->
           <div class="section-content" *ngIf="isSectionSelected(section.id)">
-            <div class="section-description">
-              <p>{{ section.description }}</p>
-            </div>
             
             <!-- Wine Items -->
             <div class="wines-grid">
@@ -48,7 +44,6 @@
                   <div class="wine-price">{{ wine.price }}</div>
                 </div>
                 
-                <div class="wine-description">{{ wine.description }}</div>
                 
                 <!-- Allergens -->
                 <div class="wine-allergens" *ngIf="wine.allergens && wine.allergens.length > 0">
