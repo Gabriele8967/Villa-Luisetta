@@ -4,7 +4,10 @@ Prezzi camere
 
 Rovaglioso, Marinella - 65 euro a persona a notte (20mq) circa
 
-Tutte le altre a 80 euro a notte a persona (30mq) circa
+Cilea - 70 euro a persona a notte (30mq)
+Manfroce - 70 euro a persona a notte (30mq)  
+Ulivarella - 75 euro a persona a notte (30mq)
+Pietre Nere - 75 euro a persona a notte (30mq)
 
 togliere le descrizioni alle camere
 
