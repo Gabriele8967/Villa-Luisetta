@@ -53,20 +53,26 @@
             <div class="tile-image-carousel" (click)="openImageModal(apartment)">
               <div class="carousel-container">
                 <img [src]="getCurrentImage(apartment)" 
-                     [alt]="apartment.name" 
+                     [alt]="'Stanza ' + apartment.name + ' a Villa Luisetta - ' + apartment.size" 
                      class="room-image" 
-                     loading="lazy">
+                     loading="lazy"
+                     decoding="async"
+                     [style.background-color]="'#f0f0f0'">
                 
                 <!-- Carousel Navigation -->
                 <button class="carousel-btn carousel-btn-prev" 
                         (click)="prevImage(apartment.id, $event)"
-                        *ngIf="apartment.images.length > 1">
-                  <span class="carousel-arrow">‹</span>
+                        *ngIf="apartment.images.length > 1"
+                        [attr.aria-label]="'Immagine precedente di stanza ' + apartment.name"
+                        type="button">
+                  <span class="carousel-arrow" aria-hidden="true">‹</span>
                 </button>
                 <button class="carousel-btn carousel-btn-next" 
                         (click)="nextImage(apartment.id, $event)"
-                        *ngIf="apartment.images.length > 1">
-                  <span class="carousel-arrow">›</span>
+                        *ngIf="apartment.images.length > 1"
+                        [attr.aria-label]="'Immagine successiva di stanza ' + apartment.name"
+                        type="button">
+                  <span class="carousel-arrow" aria-hidden="true">›</span>
                 </button>
                 
                 <!-- Image Counter -->
@@ -90,9 +96,11 @@
 
             <!-- Action Footer -->
             <div class="tile-footer">
-              <button class="contact-btn-main" (click)="scrollToContact()">
+              <button class="contact-btn-main" 
+                    (click)="scrollToContact()"
+                    [attr.aria-label]="'Contatta Villa Luisetta per prenotare la stanza ' + apartment.name">
                 <span class="btn-text">Contattaci</span>
-                <span class="btn-arrow">📞</span>
+                <span class="btn-arrow" aria-hidden="true">📞</span>
               </button>
             </div>
 
@@ -150,8 +158,10 @@
       <!-- Modal Image -->
       <div class="modal-image-container">
         <img [src]="modalImages[modalCurrentIndex]" 
-             [alt]="modalRoomName" 
-             class="modal-image">
+             [alt]="'Stanza ' + modalRoomName + ' a Villa Luisetta'" 
+             class="modal-image"
+             loading="lazy"
+             decoding="async">
         
         <!-- Modal Navigation -->
         <button class="modal-nav-btn modal-prev" 
@@ -178,7 +188,7 @@
                *ngFor="let image of modalImages; let i = index"
                [class.active]="i === modalCurrentIndex"
                (click)="modalCurrentIndex = i">
-            <img [src]="image" [alt]="modalRoomName">
+            <img [src]="image" [alt]="'Stanza ' + modalRoomName" loading="lazy" decoding="async">
           </div>
         </div>
       </div>

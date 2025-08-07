@@ -26,11 +26,12 @@
         <!-- Image -->
         <img 
           [src]="image.src" 
-          [alt]="image.alt" 
+          [alt]="'Galleria Villa Luisetta - ' + image.alt" 
           class="gallery-image"
+          loading="lazy"
+          decoding="async"
           [class.loaded]="image.loaded"
-          (load)="onImageLoad(i)"
-          loading="lazy">
+          (load)="onImageLoad(i)">
         
         <!-- Overlay with info -->
         <div class="gallery-overlay">
@@ -78,9 +79,11 @@
         </button>
         
         <img [src]="selectedImage?.src" 
-             [alt]="selectedImage?.alt"
+             [alt]="'Galleria Villa Luisetta - ' + selectedImage?.alt"
              class="lightbox-image"
-             [class.loading]="isImageLoading">
+             [class.loading]="isImageLoading"
+             loading="lazy"
+             decoding="async">
         
         <button class="lightbox-nav lightbox-next" 
                 (click)="nextImage()" 

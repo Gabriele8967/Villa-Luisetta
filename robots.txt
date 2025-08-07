@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gabriele8967.github.io/Villa-Luisetta/sitemap.xml
+
+# Disallow admin area
+Disallow: /admin-villa-luisetta-2024
+
+# Allow important pages
+Allow: /apartments
+Allow: /gallery
+Allow: /food
+Allow: /cocktails
+Allow: /enoteca
+
+# Crawl-delay for bots
+Crawl-delay: 1
+
+# Host directive
+Host: https://gabriele8967.github.io

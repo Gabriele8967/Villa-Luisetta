@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gabriele8967.github.io/Villa-Luisetta/gallery/image0.jpeg</image:loc>
+      <image:caption>Villa Luisetta - Hotel e Enoteca a Palmi</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Stanze/Apartments -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/apartments</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gabriele8967.github.io/Villa-Luisetta/rooms/Foto-stanza cilea/iniziale.jpeg</image:loc>
+      <image:caption>Stanza Cilea - Villa Luisetta</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/gallery</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Menu/Food -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/food</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cocktails -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/cocktails</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Enoteca -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/enoteca</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/privacy</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Cookie Policy -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/cookie-policy</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://gabriele8967.github.io/Villa-Luisetta/legal</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
