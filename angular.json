@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "outputMode": "static",
-            "baseHref": "/VillaLuisetta/"
+            "baseHref": "./"
           },
           "configurations": {
             "production": {
