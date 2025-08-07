@@ -1,0 +1,153 @@
+.privacy-container {
+  min-height: 100vh;
+  background: var(--primary-burgundy);
+  color: var(--pure-white);
+}
+
+.main-content {
+  padding-top: 80px;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.1), rgba(89, 26, 11, 0.9));
+}
+
+.hero-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--french-laundry-gold);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.hero-ornament {
+  width: 100px;
+  height: 2px;
+  background: var(--french-laundry-gold);
+  border: none;
+  margin: 0 auto;
+}
+
+.content-section {
+  padding: 4rem 2rem 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2rem;
+  color: var(--french-laundry-gold);
+  margin-bottom: 1.5rem;
+}
+
+.section h3 {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.4rem;
+  color: var(--french-laundry-gold);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.section p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.legal-link {
+  color: var(--french-laundry-gold);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+  color: #ffcc80;
+}
+
+.contact-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--french-laundry-gold);
+  margin-top: 3rem;
+}
+
+.contact-section h2 {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.8rem;
+  color: var(--french-laundry-gold);
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info p:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Mobile responsivity */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .content-section {
+    padding: 2rem 1rem 4rem;
+  }
+  
+  .section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .contact-section {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+}
