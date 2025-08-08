@@ -243,7 +243,7 @@ export class Food {
     },
     {
       id: 28,
-      name: 'Panna Naturale',
+      name: 'Acqua Panna naturale',
       price: '€2,5'
     },
     {
