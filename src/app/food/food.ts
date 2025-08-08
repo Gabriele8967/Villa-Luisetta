@@ -250,6 +250,11 @@ export class Food {
       id: 29,
       name: 'Coca Cola normale/zero',
       price: '€3'
+    },
+    {
+      id: 30,
+      name: 'Schweppes',
+      price: '€3'
     }
   ];
 
