@@ -238,31 +238,36 @@ export class Food {
   beverages: MenuItem[] = [
     {
       id: 27,
-      name: 'Acqua',
-      price: '€2'
+      name: 'Acqua San Pellegrino frizzante',
+      price: '€2,5'
     },
     {
       id: 28,
+      name: 'Panna Naturale',
+      price: '€2,5'
+    },
+    {
+      id: 29,
       name: 'Coca Cola normale/zero',
       price: '€3'
     },
     {
-      id: 29,
+      id: 30,
       name: 'Schweppes',
       price: '€3'
     },
     {
-      id: 30,
+      id: 31,
       name: 'Gin Tonic Premium Emporia',
       price: '€12'
     },
     {
-      id: 31,
+      id: 32,
       name: 'Gin Tonic',
       price: '€7'
     },
     {
-      id: 32,
+      id: 33,
       name: 'Calice di Vino Cantine Statti',
       ingredients: 'bianco, rosso, rosato',
       price: '€6'

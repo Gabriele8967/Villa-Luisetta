@@ -303,6 +303,34 @@ export class Enoteca {
           allergens: ['Solfiti']
         }
       ]
+    },
+    {
+      id: 'berlucchi',
+      title: 'Cantina Berlucchi',
+      expanded: false,
+      wines: [
+        {
+          id: 32,
+          name: 'Berlucchi Franciacorta Satèn',
+          price: '€30',
+          type: 'Franciacorta DOCG',
+          allergens: ['Solfiti']
+        },
+        {
+          id: 33,
+          name: 'Berlucchi Franciacorta Rosè',
+          price: '€30',
+          type: 'Franciacorta DOCG',
+          allergens: ['Solfiti']
+        },
+        {
+          id: 34,
+          name: 'Berlucchi Franciacorta Brut',
+          price: '€30',
+          type: 'Franciacorta DOCG',
+          allergens: ['Solfiti']
+        }
+      ]
     }
   ];
 

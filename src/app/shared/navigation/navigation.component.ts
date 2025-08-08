@@ -28,7 +28,7 @@ import { RouterModule, Router } from '@angular/router';
              class="nav-link">Menu</a>
           <a routerLink="/cocktails" 
              routerLinkActive="active" 
-             class="nav-link">Cocktail</a>
+             class="nav-link">Bar</a>
           <a routerLink="/enoteca" 
              routerLinkActive="active" 
              class="nav-link">Enoteca</a>
@@ -89,7 +89,7 @@ import { RouterModule, Router } from '@angular/router';
                routerLinkActive="active"
                class="mobile-nav-link" 
                (click)="closeMobileMenu()">
-              <span class="link-text">Cocktail</span>
+              <span class="link-text">Bar</span>
               <span class="link-arrow">→</span>
             </a>
             <a routerLink="/enoteca" 

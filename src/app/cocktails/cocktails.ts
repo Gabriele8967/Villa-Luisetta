@@ -14,64 +14,64 @@ export class Cocktails {
   cocktailItems = [
     {
       id: 1,
-      name: 'Negroni Classico',
-      description: 'Gin, Campari, Vermouth rosso, scorza d\'arancia',
-      price: '€10',
+      name: 'Gin Tonic Base',
+      description: 'Gin classico, acqua tonica premium',
+      price: '€7',
       showAllergens: false,
       allergens: ['Solfiti']
     },
     {
       id: 2,
-      name: 'Villa Luisetta Signature',
-      description: 'Gin invecchiato, liquore alle erbe, sciroppo di miele, lime',
-      price: '€14',
+      name: 'Gin Tonic Premium Emporia',
+      description: 'Gin Emporia premium, acqua tonica artigianale',
+      price: '€10',
       showAllergens: false,
       allergens: ['Solfiti']
     },
     {
       id: 3,
-      name: 'Aperol Spritz',
-      description: 'Aperol, Prosecco, soda, fetta d\'arancia',
-      price: '€8',
-      showAllergens: false,
-      allergens: ['Solfiti']
-    },
-    {
-      id: 4,
-      name: 'Bellini Premium',
-      description: 'Pesca bianca, Prosecco di Valdobbiadene DOCG',
-      price: '€11',
-      showAllergens: false,
-      allergens: ['Solfiti']
-    },
-    {
-      id: 5,
-      name: 'Moscow Mule',
-      description: 'Vodka premium, ginger beer, lime, menta fresca',
-      price: '€9',
-      showAllergens: false,
-      allergens: ['Solfiti']
-    },
-    {
-      id: 6,
-      name: 'Old Fashioned',
-      description: 'Whisky bourbon, zucchero di canna, angostura, scorza d\'arancia',
+      name: 'Gin Portofino',
+      description: 'Gin Portofino, tonica premium, botaniche italiane',
       price: '€12',
       showAllergens: false,
       allergens: ['Solfiti']
     },
     {
+      id: 4,
+      name: 'Amaro Sprint',
+      description: 'Spritz di amaro del capo, dolcezza agrumata e piccantezza speziata, con un retrogusto persistente e soddisfacente (45ml amaro sprint, soda e buccia d\'arancia)',
+      price: '€7',
+      showAllergens: false,
+      allergens: ['Solfiti']
+    },
+    {
+      id: 5,
+      name: 'Calice di Vino',
+      description: 'Selezione vini della casa - bianco, rosso, rosato',
+      price: '€6',
+      showAllergens: false,
+      allergens: ['Solfiti']
+    },
+    {
+      id: 6,
+      name: 'Grappa Mangilli Invecchiata',
+      description: 'Grappa invecchiata barricata, distillazione artigianale',
+      price: '€5',
+      showAllergens: false,
+      allergens: ['Solfiti']
+    },
+    {
       id: 7,
-      name: 'Martini Dry',
-      description: 'Gin premium, vermouth dry, oliva verde o scorza di limone',
-      price: '€11',
+      name: 'Amaro del Capo al Peperoncino',
+      description: 'Amaro calabrese con note piccanti e aromatiche',
+      price: '€3',
       showAllergens: false,
       allergens: ['Solfiti']
     },
     {
       id: 8,
-      name: 'Mojito Royal',
-      description: 'Rum bianco, menta fresca, lime, zucchero di canna, soda',
+      name: 'Prosecco Carati 75cl',
+      description: 'Bottiglia Prosecco 0,75 litri',
       price: '€10',
       showAllergens: false,
       allergens: ['Solfiti']
