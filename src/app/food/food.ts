@@ -250,27 +250,6 @@ export class Food {
       id: 29,
       name: 'Coca Cola normale/zero',
       price: '€3'
-    },
-    {
-      id: 30,
-      name: 'Schweppes',
-      price: '€3'
-    },
-    {
-      id: 31,
-      name: 'Gin Tonic Premium Emporia',
-      price: '€12'
-    },
-    {
-      id: 32,
-      name: 'Gin Tonic',
-      price: '€7'
-    },
-    {
-      id: 33,
-      name: 'Calice di Vino Cantine Statti',
-      ingredients: 'bianco, rosso, rosato',
-      price: '€6'
     }
   ];
 

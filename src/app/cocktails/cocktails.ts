@@ -14,25 +14,25 @@ export class Cocktails {
   cocktailItems = [
     {
       id: 1,
-      name: 'Gin Tonic Base',
-      description: 'Gin classico, acqua tonica premium',
-      price: '€7',
+      name: 'Gin Portofino',
+      description: 'Gin Portofino, tonica premium India/Mediterranean, botaniche italiane',
+      price: '€12',
       showAllergens: false,
       allergens: ['Solfiti']
     },
     {
       id: 2,
       name: 'Gin Tonic Premium Emporia',
-      description: 'Gin Emporia premium, acqua tonica artigianale',
+      description: 'Gin Emporia premium, acqua tonica India/Mediterranean',
       price: '€10',
       showAllergens: false,
       allergens: ['Solfiti']
     },
     {
       id: 3,
-      name: 'Gin Portofino',
-      description: 'Gin Portofino, tonica premium, botaniche italiane',
-      price: '€12',
+      name: 'Gin Tonic Base',
+      description: 'Gin classico, acqua tonica India/Mediterranean',
+      price: '€7',
       showAllergens: false,
       allergens: ['Solfiti']
     },
@@ -70,7 +70,7 @@ export class Cocktails {
     },
     {
       id: 8,
-      name: 'Prosecco Carati 75cl',
+      name: '075 Carati 75cl',
       description: 'Bottiglia Prosecco 0,75 litri',
       price: '€10',
       showAllergens: false,
