@@ -210,7 +210,7 @@ export class Food {
     {
       id: 23,
       name: 'Tiramisù',
-      ingredients: '**mascarpone**, **uova**, savoiardi, caffè, zucchero',
+      ingredients: '<strong>mascarpone</strong>, <strong>uova</strong>, savoiardi, caffè, zucchero',
       price: '€5',
       allergens: ['latte', 'uova', 'glutine']
     },
