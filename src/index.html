@@ -136,18 +136,36 @@
   }
   </script>
   
-  <!-- Service Worker Registration - Temporarily disabled -->
+  <!-- Service Worker Force Unregister -->
   <script>
-    // Temporarily disable Service Worker to fix MIME type issues
+    // Force remove Service Worker and clear all caches
     if ('serviceWorker' in navigator) {
-      // Unregister existing service workers
+      // Unregister all service workers
       navigator.serviceWorker.getRegistrations().then(registrations => {
+        console.log('Found', registrations.length, 'service workers');
         registrations.forEach(registration => {
-          console.log('Villa Luisetta: Unregistering SW');
+          console.log('Unregistering SW:', registration.scope);
           registration.unregister();
         });
       });
+      
+      // Clear all caches
+      if ('caches' in window) {
+        caches.keys().then(cacheNames => {
+          console.log('Found caches:', cacheNames);
+          cacheNames.forEach(cacheName => {
+            console.log('Deleting cache:', cacheName);
+            caches.delete(cacheName);
+          });
+        });
+      }
     }
+    
+    // Force reload after cleanup
+    setTimeout(() => {
+      console.log('Force reload after SW cleanup');
+      window.location.reload(true);
+    }, 2000);
   </script>
 </body>
 </html>
