@@ -136,17 +136,16 @@
   }
   </script>
   
-  <!-- Service Worker Registration -->
+  <!-- Service Worker Registration - Temporarily disabled -->
   <script>
+    // Temporarily disable Service Worker to fix MIME type issues
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(registration => {
-            console.log('Villa Luisetta SW registered: ', registration);
-          })
-          .catch(registrationError => {
-            console.log('Villa Luisetta SW registration failed: ', registrationError);
-          });
+      // Unregister existing service workers
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => {
+          console.log('Villa Luisetta: Unregistering SW');
+          registration.unregister();
+        });
       });
     }
   </script>
