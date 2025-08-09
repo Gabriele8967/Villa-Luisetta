@@ -1,5 +1,5 @@
 // Villa Luisetta Service Worker
-const CACHE_NAME = 'villa-luisetta-v1';
+const CACHE_NAME = 'villa-luisetta-v2-netlify';
 const CACHE_URLS = [
   './',
   './index.html',
@@ -19,6 +19,10 @@ const CACHE_URLS = [
 
 // Install event - cache resources
 self.addEventListener('install', event => {
+  console.log('Villa Luisetta SW: Installing new version');
+  // Skip waiting to activate immediately
+  self.skipWaiting();
+  
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -30,6 +34,10 @@ self.addEventListener('install', event => {
 
 // Activate event - clean old caches
 self.addEventListener('activate', event => {
+  console.log('Villa Luisetta SW: Activating new version');
+  // Claim all clients immediately
+  self.clients.claim();
+  
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
