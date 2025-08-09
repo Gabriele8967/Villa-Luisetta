@@ -1,5 +1,6 @@
 // Villa Luisetta Service Worker
-const CACHE_NAME = 'villa-luisetta-v3-fixed';
+const CACHE_NAME = 'villa-luisetta-v4-24h';
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 ore in millisecondi
 const CACHE_URLS = [
   './',
   './index.html',
@@ -52,19 +53,55 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - cache con scadenza 24 ore
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-      .then(response => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request);
-      })
-      .catch(() => {
-        // Fallback for offline
-        if (event.request.destination === 'document') {
-          return caches.match('./index.html');
+      .then(cachedResponse => {
+        // Se abbiamo una versione cached, controlliamo se è ancora valida
+        if (cachedResponse) {
+          const cachedTime = cachedResponse.headers.get('sw-cache-time');
+          if (cachedTime) {
+            const age = Date.now() - parseInt(cachedTime);
+            // Se la cache ha meno di 24 ore, usala
+            if (age < CACHE_DURATION) {
+              return cachedResponse;
+            }
+          }
         }
+        
+        // Altrimenti, scarica da rete e aggiorna cache
+        return fetch(event.request)
+          .then(networkResponse => {
+            // Clona la response per il caching
+            const responseClone = networkResponse.clone();
+            
+            // Aggiungi timestamp alla response per tracking scadenza
+            const headers = new Headers(responseClone.headers);
+            headers.set('sw-cache-time', Date.now().toString());
+            
+            const modifiedResponse = new Response(responseClone.body, {
+              status: responseClone.status,
+              statusText: responseClone.statusText,
+              headers: headers
+            });
+            
+            // Aggiorna la cache
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, modifiedResponse);
+            });
+            
+            return networkResponse;
+          })
+          .catch(() => {
+            // Fallback offline - usa cache anche se scaduta
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            if (event.request.destination === 'document') {
+              return caches.match('./index.html');
+            }
+          });
       })
   );
 });

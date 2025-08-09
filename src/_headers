@@ -11,12 +11,23 @@
 /*.json
   Content-Type: application/json; charset=utf-8
 
-# Cache control
+# Cache control - 24 ore per aggiornamenti automatici
 /*.js
-  Cache-Control: public, max-age=31536000
+  Cache-Control: public, max-age=86400
 
 /*.css
-  Cache-Control: public, max-age=31536000
+  Cache-Control: public, max-age=86400
+
+# HTML files - cache più breve per aggiornamenti immediati
+/*.html
+  Cache-Control: public, max-age=3600
+
+/index.html
+  Cache-Control: public, max-age=3600
+
+# Service Worker - sempre fresh
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
 
 # Security headers
 /*
