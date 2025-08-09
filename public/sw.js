@@ -1,5 +1,5 @@
 // Villa Luisetta Service Worker
-const CACHE_NAME = 'villa-luisetta-v2-netlify';
+const CACHE_NAME = 'villa-luisetta-v3-fixed';
 const CACHE_URLS = [
   './',
   './index.html',

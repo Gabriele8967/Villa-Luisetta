@@ -1,5 +1,5 @@
 // Villa Luisetta Service Worker
-const CACHE_NAME = 'villa-luisetta-v1';
+const CACHE_NAME = 'villa-luisetta-v3-fixed';
 const CACHE_URLS = [
   './',
   './index.html',
