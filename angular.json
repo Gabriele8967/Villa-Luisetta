@@ -29,7 +29,7 @@
               "src/styles.css"
             ],
             "outputMode": "static",
-            "baseHref": "./"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
