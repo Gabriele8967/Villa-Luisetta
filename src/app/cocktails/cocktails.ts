@@ -14,7 +14,7 @@ export class Cocktails {
   cocktailItems = [
     {
       id: 1,
-      name: 'Gin Portofino',
+      name: 'Gin Tonic Premium Portofino',
       description: 'Gin Portofino, tonica premium India/Mediterranean, botaniche italiane',
       price: '€12',
       showAllergens: false,
@@ -38,7 +38,7 @@ export class Cocktails {
     },
     {
       id: 4,
-      name: 'Amaro Sprint',
+      name: 'Capotonic',
       description: 'Spritz di amaro del capo, dolcezza agrumata e piccantezza speziata, con un retrogusto persistente e soddisfacente (45ml amaro sprint, soda e buccia d\'arancia)',
       price: '€7',
       showAllergens: false,
