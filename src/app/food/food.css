@@ -255,12 +255,13 @@
 .menu-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--pure-white);
-    background: rgba(60, 60, 60, 0.8);
+    color: var(--primary-burgundy);
+    background: rgba(248, 246, 238, 0.95);
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(248, 246, 238, 0.3);
 }
 
 .expand-icon {
@@ -550,12 +551,13 @@
 }
 
 .dessert-price, .beverage-price {
-    color: var(--pure-white);
+    color: var(--primary-burgundy);
     font-weight: 700;
-    background: rgba(60, 60, 60, 0.8);
+    background: rgba(248, 246, 238, 0.95);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-size: 1rem;
+    border: 1px solid rgba(248, 246, 238, 0.3);
 }
 
 .dessert-ingredients, .beverage-description {

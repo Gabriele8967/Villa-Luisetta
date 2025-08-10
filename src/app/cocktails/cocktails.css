@@ -111,14 +111,15 @@
     font-family: 'Bodoni Moda', serif;
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--pure-white);
-    background: rgba(60, 60, 60, 0.8);
+    color: var(--primary-burgundy);
+    background: rgba(248, 246, 238, 0.95);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     white-space: nowrap;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 2;
+    border: 1px solid rgba(248, 246, 238, 0.3);
 }
 
 .item-description {
@@ -234,12 +235,13 @@
     .item-price {
         font-size: 1.1rem;
         align-self: center;
-        background: rgba(60, 60, 60, 0.8);
+        background: rgba(248, 246, 238, 0.95);
         padding: 0.5rem 1rem;
         border-radius: 4px;
-        border: 1px solid rgba(80, 80, 80, 0.5);
+        border: 1px solid rgba(248, 246, 238, 0.3);
         width: 100%;
         text-align: center;
+        color: var(--primary-burgundy);
     }
     
     .item-description {
