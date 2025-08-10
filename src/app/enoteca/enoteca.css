@@ -115,7 +115,7 @@
     font-family: 'Bodoni Moda', serif;
     font-size: 2rem;
     font-weight: 500;
-    color: var(--french-laundry-gold);
+    color: var(--pure-white);
     margin: 0 0 0.5rem 0;
 }
 
@@ -234,10 +234,10 @@
 .wine-price {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--french-laundry-gold);
-    background: rgba(201, 169, 97, 0.2);
+    color: var(--pure-white);
+    background: rgba(60, 60, 60, 0.8);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 4px;
     white-space: nowrap;
     flex-shrink: 0;
 }
