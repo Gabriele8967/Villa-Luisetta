@@ -1,7 +1,7 @@
 # Netlify configuration for Villa Luisetta
 [build]
-  publish = "dist/VillaLuisetta"
-  command = "npm ci && npm run build --prod"
+  publish = "dist/VillaLuisetta/browser"
+  command = "npm ci && npm run build"
 
 # Force HTTPS redirects
 [[redirects]]
