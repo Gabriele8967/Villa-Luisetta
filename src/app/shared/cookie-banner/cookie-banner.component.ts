@@ -113,14 +113,38 @@ export class CookieBannerComponent implements OnInit {
 
   ngOnInit() {
     // Mostra il banner se l'utente non ha ancora accettato i cookie
-    const cookiesAccepted = localStorage.getItem('villa-luisetta-cookies-accepted');
+    const cookiesAccepted = this.getCookieValue('villa-luisetta-cookies-accepted') || 
+                           localStorage.getItem('villa-luisetta-cookies-accepted');
     if (!cookiesAccepted) {
       this.showBanner = true;
     }
   }
 
+  private getCookieValue(name: string): string | null {
+    try {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
   acceptCookies() {
-    localStorage.setItem('villa-luisetta-cookies-accepted', 'true');
-    this.showBanner = false;
+    try {
+      // Set cookie con scadenza e sicurezza
+      const expiryDate = new Date();
+      expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+      
+      // Usa cookie invece di localStorage per maggiore compatibilità
+      document.cookie = `villa-luisetta-cookies-accepted=true; expires=${expiryDate.toUTCString()}; path=/; secure; samesite=strict`;
+      
+      // Fallback localStorage
+      localStorage.setItem('villa-luisetta-cookies-accepted', 'true');
+      
+      this.showBanner = false;
+    } catch (error) {
+      console.error('Error setting cookies:', error);
+      this.showBanner = false;
+    }
   }
 }

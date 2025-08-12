@@ -53,8 +53,13 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch event - cache con scadenza 24 ore
+// Fetch event - cache con scadenza 24 ore e sicurezza HTTPS
 self.addEventListener('fetch', event => {
+  // Only cache HTTPS requests per sicurezza
+  if (!event.request.url.startsWith('https://')) {
+    return fetch(event.request);
+  }
+  
   event.respondWith(
     caches.match(event.request)
       .then(cachedResponse => {
@@ -71,8 +76,17 @@ self.addEventListener('fetch', event => {
         }
         
         // Altrimenti, scarica da rete e aggiorna cache
-        return fetch(event.request)
+        return fetch(event.request, {
+          // Force HTTPS and security headers
+          redirect: 'follow',
+          referrerPolicy: 'strict-origin-when-cross-origin'
+        })
           .then(networkResponse => {
+            // Solo cache per response valide
+            if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+              return networkResponse;
+            }
+            
             // Clona la response per il caching
             const responseClone = networkResponse.clone();
             
@@ -86,10 +100,12 @@ self.addEventListener('fetch', event => {
               headers: headers
             });
             
-            // Aggiorna la cache
-            caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, modifiedResponse);
-            });
+            // Aggiorna la cache solo per richieste sicure
+            if (event.request.url.startsWith('https://')) {
+              caches.open(CACHE_NAME).then(cache => {
+                cache.put(event.request, modifiedResponse);
+              });
+            }
             
             return networkResponse;
           })
