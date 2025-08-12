@@ -22,6 +22,13 @@
   status = 301
   force = true
 
+# Ensure SSL redirect for apex domain  
+[[redirects]]
+  from = "villaluisetta.it/*"
+  to = "https://www.villaluisetta.it/:splat"
+  status = 301
+  force = true
+
 # SPA fallback for Angular routing
 [[redirects]]
   from = "/*"
