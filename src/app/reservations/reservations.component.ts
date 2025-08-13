@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from '../shared/navigation/navigation.component';
 
@@ -9,7 +9,12 @@ import { NavigationComponent } from '../shared/navigation/navigation.component';
   standalone: true,
   imports: [CommonModule, NavigationComponent]
 })
-export class ReservationsComponent {
+export class ReservationsComponent implements OnInit {
+  
+  ngOnInit() {
+    // Scorri automaticamente all'inizio della pagina quando il componente viene caricato
+    window.scrollTo(0, 0);
+  }
   
   timeSlots = [
     {
