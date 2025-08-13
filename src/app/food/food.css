@@ -928,6 +928,18 @@
     .main-content {
         padding: 2rem 1rem;
     }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
 
     /* Navigation buttons tablet */
     .nav-buttons-grid {
@@ -943,49 +955,121 @@
         font-size: 1.4rem;
     }
     
-    .hero-title {
-        font-size: 2.5rem;
+    .menu-card {
+        padding: 1.5rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
     
     .menu-header {
-        padding: 2rem;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .menu-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .menu-title {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+    
+    .menu-price {
+        font-size: 1.1rem;
+        align-self: flex-end;
     }
     
     .menu-details {
-        padding: 0 2rem 2rem;
+        padding: 1.5rem 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 1rem;
     }
     
-    .beverage-section {
-        padding: 1.5rem;
+    .section-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .beverage-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
     }
     
     .dish-card {
-        flex-direction: column;
-        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        flex-direction: row;
+        align-items: flex-start;
         gap: 1rem;
     }
     
     .dish-number {
-        margin: 0 auto 1rem;
+        width: 24px;
+        height: 24px;
+        font-size: 0.9rem;
+        margin-right: 1rem;
+        flex-shrink: 0;
+    }
+    
+    .dish-name {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .ingredients-text {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .allergen-tags {
+        gap: 0.3rem;
+        margin-top: 0.5rem;
+    }
+    
+    .allergen-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
     }
     
     .dessert-grid, .beverage-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dessert-card, .beverage-card {
+        padding: 1.5rem;
     }
     
     .cta-section {
         padding: 2rem 1rem;
+        margin: 3rem 1rem 2rem;
+        border-radius: 16px;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .cta-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .cta-actions {
         flex-direction: column;
         align-items: center;
+        gap: 0.75rem;
     }
     
     .cta-btn {
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
         justify-content: center;
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
     }
     
     .footer-content {
