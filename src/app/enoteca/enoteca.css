@@ -30,15 +30,16 @@
 }
 
 .hero-title {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
     font-weight: 400;
     color: var(--pure-white);
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--pure-white) 0%, var(--french-laundry-gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .hero-subtitle {
@@ -69,16 +70,19 @@
 
 .sections-grid {
     display: grid;
-    gap: 2rem;
+    gap: 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .section-card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    transition: none;
+    backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .section-card:hover {
@@ -112,11 +116,13 @@
 }
 
 .section-title {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 2rem;
-    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--pure-white);
-    margin: 0 0 0.5rem 0;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: 1px;
 }
 
 .section-subtitle {
@@ -142,9 +148,10 @@
 ======================================== */
 
 .section-content {
-    padding: 0 2.5rem 2.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    animation: slideDown 0.4s ease;
+    padding: 2rem;
+    border-top: none;
+    animation: none;
+    background: transparent;
 }
 
 @keyframes slideDown {
@@ -178,16 +185,17 @@
 
 .wines-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 0;
 }
 
 .wine-item {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 2rem;
-    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 1.5rem 0;
+    transition: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .wine-item:hover {
@@ -200,7 +208,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     gap: 1rem;
 }
 
@@ -209,12 +217,13 @@
 }
 
 .wine-name {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
     color: var(--pure-white);
     margin: 0 0 0.5rem 0;
     line-height: 1.3;
+    letter-spacing: 0.5px;
 }
 
 .wine-producer {
@@ -232,22 +241,24 @@
 }
 
 .wine-price {
+    font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-burgundy);
-    background: rgba(248, 246, 238, 0.95);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    font-weight: 400;
+    color: var(--french-laundry-gold);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
     white-space: nowrap;
     flex-shrink: 0;
-    border: 1px solid rgba(248, 246, 238, 0.3);
+    border: none;
 }
 
 .wine-description {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 /* ========================================

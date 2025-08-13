@@ -8,6 +8,15 @@
     --neutral-warm: #f7fafc;
     --text-muted: #718096;
     --border-subtle: rgba(203, 213, 225, 0.3);
+    
+    /* Enhanced Design System - Osteria Style */
+    --cream-background: #fefcf8;
+    --text-primary: #2c2c2c;
+    --text-secondary: #6b6b6b;
+    --elegant-spacing: 2.5rem;
+    --section-spacing: 4rem;
+    --line-height-relaxed: 1.8;
+    --transition-elegant: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {

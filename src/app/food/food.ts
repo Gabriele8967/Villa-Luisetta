@@ -54,27 +54,27 @@ export class Food {
         {
           id: 2,
           name: 'Tagliere di Salumi e Formaggi',
-          ingredients: 'salumi tipici calabresi (secondo disponibilità), **formaggio pecorino**, miele',
-          allergens: ['formaggio'],
+          ingredients: 'salumi tipici calabresi (secondo disponibilità), **lattosio pecorino**, miele',
+          allergens: ['lattosio'],
           frozen: true
         },
         {
           id: 3,
           name: 'Fiori di Zucca con Stracciatella',
-          ingredients: 'farina e **formaggio vaccino**',
-          allergens: ['glutine', 'formaggio']
+          ingredients: 'farina e **lattosio vaccino**',
+          allergens: ['glutine', 'lattosio']
         },
         {
           id: 4,
           name: 'Parmigiana di Melanzane',
-          ingredients: '**pomodoro**, mollica, **formaggio**, olio, **melanzane**',
-          allergens: ['glutine', 'formaggio']
+          ingredients: '**pomodoro**, mollica, **lattosio**, olio, **melanzane**',
+          allergens: ['glutine', 'lattosio']
         },
         {
           id: 5,
           name: 'Polpette di Zucchine',
-          ingredients: '**formaggio**, mollica, olio, zucchine',
-          allergens: ['glutine', 'formaggio']
+          ingredients: '**lattosio**, mollica, olio, zucchine',
+          allergens: ['glutine', 'lattosio']
         },
         {
           id: 6,
@@ -128,8 +128,8 @@ export class Food {
         {
           id: 12,
           name: 'Polpette di Pesce',
-          ingredients: 'fatte con **formaggio**, mollica e **uova**, con pesto di fiori di zucca e **mandorle** tostate',
-          allergens: ['pesce', 'formaggio', 'uova', 'glutine', 'frutta secca'],
+          ingredients: 'fatte con **lattosio**, mollica e **uova**, con pesto di fiori di zucca e **mandorle** tostate',
+          allergens: ['pesce', 'lattosio', 'uova', 'glutine', 'frutta secca'],
           frozen: true
         },
         {
@@ -157,14 +157,14 @@ export class Food {
         {
           id: 15,
           name: 'Peperone Ripieno',
-          ingredients: '**pomodoro**, mollica, **formaggio**, uova',
-          allergens: ['glutine', 'formaggio', 'uova']
+          ingredients: '**pomodoro**, mollica, **lattosio**, uova',
+          allergens: ['glutine', 'lattosio', 'uova']
         },
         {
           id: 16,
           name: 'Melanzana Ripiena',
-          ingredients: '**pomodoro**, mollica, **formaggio**, uova',
-          allergens: ['glutine', 'formaggio', 'uova']
+          ingredients: '**pomodoro**, mollica, **lattosio**, uova',
+          allergens: ['glutine', 'lattosio', 'uova']
         },
         {
           id: 17,
@@ -175,8 +175,8 @@ export class Food {
         {
           id: 18,
           name: 'Frittelle di Fiori di Zucca',
-          ingredients: '**aglio**, **formaggio**, farina, basilico',
-          allergens: ['glutine', 'formaggio']
+          ingredients: '**aglio**, **lattosio**, farina, basilico',
+          allergens: ['glutine', 'lattosio']
         },
         {
           id: 19,
@@ -187,14 +187,14 @@ export class Food {
         {
           id: 20,
           name: 'Polpettine al Sugo',
-          ingredients: 'carne di **vitello**, **pomodoro**, aglio, **formaggio**, pane, prezzemolo, basilico',
-          allergens: ['glutine', 'formaggio']
+          ingredients: 'carne di **vitello**, **pomodoro**, aglio, **lattosio**, pane, prezzemolo, basilico',
+          allergens: ['glutine', 'lattosio']
         },
         {
           id: 21,
           name: 'Crocchette di Patate',
-          ingredients: '**formaggio**, patate, **uovo**',
-          allergens: ['formaggio', 'uova']
+          ingredients: '**lattosio**, patate, **uovo**',
+          allergens: ['lattosio', 'uova']
         },
         {
           id: 22,

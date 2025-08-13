@@ -1,13 +1,19 @@
 /* ========================================
-   APERICENA MENU - ELEGANT & ACCESSIBLE DESIGN
+   APERICENA MENU - OSTERIA MINIMALIST STYLE WITH VILLA LUISETTA COLORS
 ======================================== */
 
 .food-container {
     min-height: 100vh;
     background: var(--primary-burgundy);
     color: var(--pure-white);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     padding-top: 80px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.food-container::before {
+    display: none;
 }
 
 /* ========================================
@@ -15,9 +21,11 @@
 ======================================== */
 
 .main-content {
-    padding: 4rem 2rem;
-    max-width: 1400px;
+    padding: var(--section-spacing) 2rem;
+    max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 /* ========================================
@@ -155,15 +163,28 @@
 }
 
 .hero-title {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
     font-weight: 400;
     color: var(--pure-white);
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--pure-white) 0%, var(--french-laundry-gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    position: relative;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--french-laundry-gold), transparent);
 }
 
 .hero-subtitle {
@@ -200,19 +221,39 @@
 }
 
 .menu-card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    transition: none;
+    backdrop-filter: none;
+    position: relative;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+}
+
+.menu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--french-laundry-gold), transparent);
+    opacity: 0;
+    transition: var(--transition-elegant);
 }
 
 .menu-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(201, 169, 97, 0.5);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(201, 169, 97, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.menu-card:hover::before {
+    opacity: 1;
 }
 
 .menu-card.selected {
@@ -243,25 +284,27 @@
 }
 
 .menu-title {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--pure-white);
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.4;
     flex: 1;
+    letter-spacing: 1px;
 }
 
 .menu-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-burgundy);
-    background: rgba(248, 246, 238, 0.95);
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--french-laundry-gold);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
     white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(248, 246, 238, 0.3);
+    box-shadow: none;
+    border: none;
+    font-family: 'Playfair Display', serif;
 }
 
 .expand-icon {
@@ -284,9 +327,10 @@
 ======================================== */
 
 .menu-details {
-    padding: 0 2.5rem 2.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    animation: slideDown 0.4s ease;
+    padding: 2rem;
+    border-top: none;
+    animation: none;
+    background: transparent;
 }
 
 @keyframes slideDown {
@@ -305,10 +349,10 @@
 ======================================== */
 
 .beverage-section {
-    margin-bottom: 2.5rem;
-    padding: 1rem 0;
-    border-left: 2px solid var(--french-laundry-gold);
-    padding-left: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    border-left: none;
+    padding-left: 0;
 }
 
 .section-header {
@@ -319,11 +363,12 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--french-laundry-gold);
-    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--pure-white);
+    margin: 0 0 1rem 0;
+    letter-spacing: 1px;
 }
 
 .section-icon {
@@ -335,11 +380,12 @@
 }
 
 .beverage-description {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 0 2rem 0;
+    font-style: normal;
+    font-family: 'Playfair Display', serif;
 }
 
 /* ========================================
@@ -358,35 +404,55 @@
 
 .dish-card {
     display: flex;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 1.5rem 0;
+    transition: none;
     position: relative;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dish-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--french-laundry-gold);
+    transition: var(--transition-elegant);
+    border-radius: 0 2px 2px 0;
 }
 
 .dish-card:hover {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(201, 169, 97, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dish-card:hover::before {
+    height: 60%;
 }
 
 .dish-number {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(45deg, var(--french-laundry-gold), #d4af37);
-    color: #000;
-    border-radius: 50%;
-    font-weight: 700;
-    font-size: 1.1rem;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    color: var(--french-laundry-gold);
+    border-radius: 0;
+    font-weight: 400;
+    font-size: 1rem;
     margin-right: 1.5rem;
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+    box-shadow: none;
+    font-family: 'Playfair Display', serif;
 }
 
 .dish-content {
@@ -398,15 +464,16 @@
 }
 
 .dish-name {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
     color: var(--pure-white);
-    margin: 0;
-    line-height: 1.3;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    letter-spacing: 0.5px;
 }
 
 .frozen-badge {
@@ -433,9 +500,11 @@
 
 .ingredients-text {
     color: rgba(255, 255, 255, 0.85);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: var(--line-height-relaxed);
     margin: 0;
+    font-style: italic;
+    letter-spacing: 0.01em;
 }
 
 .allergen-highlight {

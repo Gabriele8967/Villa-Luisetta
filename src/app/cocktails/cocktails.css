@@ -1,13 +1,14 @@
 /* ========================================
-   COCKTAILS PAGE - MOBILE-FIRST RESPONSIVE DESIGN
+   COCKTAILS PAGE - WORLD-CLASS FINE DINING INSPIRED
 ======================================== */
 
 .cocktails-container {
     min-height: 100vh;
     background: var(--primary-burgundy);
     color: var(--pure-white);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
     padding-top: 80px;
+    position: relative;
 }
 
 /* ========================================
@@ -26,15 +27,16 @@
 }
 
 .hero-title {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
     font-weight: 400;
     color: var(--pure-white);
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--pure-white) 0%, var(--french-laundry-gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .hero-subtitle {
@@ -61,20 +63,22 @@
 
 .cocktails-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .cocktail-item {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-    border-radius: 16px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(20px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .cocktail-item:hover {
@@ -93,14 +97,15 @@
 }
 
 .item-name {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.375rem;
-    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--pure-white);
-    margin: 0 0 0.5rem 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    z-index: 2;
+    margin: 0;
+    line-height: 1.4;
+    flex: 1;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
 .cocktail-item:hover .item-name {
@@ -108,18 +113,17 @@
 }
 
 .item-price {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary-burgundy);
-    background: rgba(248, 246, 238, 0.95);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--french-laundry-gold);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
     white-space: nowrap;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    z-index: 2;
-    border: 1px solid rgba(248, 246, 238, 0.3);
+    box-shadow: none;
+    border: none;
+    margin-left: auto;
 }
 
 .item-description {
@@ -140,23 +144,25 @@
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(201, 169, 97, 0.1);
-    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+    border-radius: 0;
     margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .allergens-animation.show {
     max-height: 150px;
     opacity: 1;
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 .allergens-details h4 {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1rem;
-    color: var(--french-laundry-gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: var(--pure-white);
     margin: 0 0 0.5rem 0;
+    letter-spacing: 0.5px;
 }
 
 .allergens-list {
@@ -166,12 +172,12 @@
 }
 
 .allergen-tag {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
+    background: transparent;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0;
     font-size: 0.75rem;
-    color: var(--pure-white);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--french-laundry-gold);
+    border: 1px solid rgba(201, 169, 97, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -404,6 +410,80 @@
     }
 }
 
+/* ========================================
+   CTA SECTION
+======================================== */
+
+.cta-section {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    margin: 4rem 2rem 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--french-laundry-gold);
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(45deg, var(--french-laundry-gold), #d4af37);
+    color: #000;
+}
+
+.cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--pure-white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.primary:hover {
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+}
+
+.cta-icon {
+    font-size: 1.1rem;
+}
+
 /* Touch device optimizations */
 @media (pointer: coarse) {
     .cocktail-item {
@@ -418,5 +498,28 @@
     .cocktail-item:active {
         transform: scale(0.98);
         transition: transform 0.1s ease;
+    }
+}
+
+/* Responsive CTA */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 2rem 1rem;
+        margin: 3rem 1rem 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
     }
 }

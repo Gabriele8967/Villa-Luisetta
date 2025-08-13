@@ -138,6 +138,26 @@
   width: 60%;
 }
 
+/* CTA Button in Navigation */
+.nav-link.cta-btn {
+  background: linear-gradient(45deg, var(--french-laundry-gold), #d4af37);
+  color: #000;
+  font-weight: 600;
+  margin-left: 1rem;
+  border: none;
+}
+
+.nav-link.cta-btn::before {
+  display: none;
+}
+
+.nav-link.cta-btn:hover {
+  background: linear-gradient(45deg, #d4af37, var(--french-laundry-gold));
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+}
+
 /* ========================================
    MOBILE HAMBURGER MENU
 ======================================== */
@@ -320,6 +340,30 @@
 .mobile-nav-link:hover .link-arrow,
 .mobile-nav-link.active .link-arrow {
   transform: translateX(8px);
+}
+
+/* CTA Button in Mobile Menu */
+.mobile-nav-link.cta-mobile {
+  background: linear-gradient(45deg, var(--french-laundry-gold), #d4af37);
+  border: 1px solid var(--french-laundry-gold);
+  color: #000;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.mobile-nav-link.cta-mobile .link-text {
+  color: #000;
+  font-weight: 600;
+}
+
+.mobile-nav-link.cta-mobile .link-arrow {
+  color: #000;
+}
+
+.mobile-nav-link.cta-mobile:hover {
+  background: linear-gradient(45deg, #d4af37, var(--french-laundry-gold));
+  border-color: #d4af37;
+  color: #000;
 }
 
 .mobile-nav-footer {

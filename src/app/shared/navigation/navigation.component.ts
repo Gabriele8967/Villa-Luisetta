@@ -32,6 +32,9 @@ import { RouterModule, Router } from '@angular/router';
           <a routerLink="/enoteca" 
              routerLinkActive="active" 
              class="nav-link">Enoteca</a>
+          <a routerLink="/reservations" 
+             routerLinkActive="active" 
+             class="nav-link cta-btn">Prenota</a>
         </div>
         
         <!-- Mobile Hamburger -->
@@ -97,6 +100,13 @@ import { RouterModule, Router } from '@angular/router';
                class="mobile-nav-link" 
                (click)="closeMobileMenu()">
               <span class="link-text">Enoteca</span>
+              <span class="link-arrow">→</span>
+            </a>
+            <a routerLink="/reservations" 
+               routerLinkActive="active"
+               class="mobile-nav-link cta-mobile" 
+               (click)="closeMobileMenu()">
+              <span class="link-text">🕐 Prenota</span>
               <span class="link-arrow">→</span>
             </a>
           </div>
