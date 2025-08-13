@@ -193,11 +193,11 @@
 /* Tablet - 768px and below */
 @media (max-width: 768px) {
     .cocktails-container {
-        padding-top: 70px;
+        padding-top: 90px;
     }
     
     .main-content {
-        padding: 4rem 1.5rem 3rem;
+        padding: 3rem 1.5rem 3rem;
     }
     
     .hero-title {
@@ -259,11 +259,11 @@
 /* Mobile - 480px and below */
 @media (max-width: 480px) {
     .cocktails-container {
-        padding-top: 65px;
+        padding-top: 100px;
     }
     
     .main-content {
-        padding: 3rem 1rem 2rem;
+        padding: 2rem 1rem 2rem;
     }
     
     .hero-title {
