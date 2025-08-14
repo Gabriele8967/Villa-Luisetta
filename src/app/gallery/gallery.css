@@ -823,10 +823,9 @@
         display: block;
         margin-top: 0.25rem;
     }
-}
     
-.nav-icon {
-    font-size: 1.3rem;
+    .nav-icon {
+        font-size: 1.3rem;
     }
     
     .lightbox-footer {
