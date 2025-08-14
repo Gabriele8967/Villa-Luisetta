@@ -124,7 +124,7 @@ export class Enoteca {
     },
     {
       id: 'cantina-antonello-lombardo',
-      title: 'Cantina Antonello Lombardo',
+      title: 'Cantina Antonella Lombardo',
       expanded: false,
       wines: [
         {
