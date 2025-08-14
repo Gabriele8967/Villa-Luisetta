@@ -6,9 +6,9 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 class="hero-title">Menu Apericena</h1>
+        <h1 class="hero-title">{{ 'food.hero.title' | i18n }}</h1>
         <p class="hero-subtitle">
-          Scopri i nostri menu degustazione con prodotti locali e specialità calabresi
+          <span>{{ 'food.hero.subtitle' | i18n }}</span>
         </p>
         <hr class="hero-ornament">
       </div>
@@ -17,12 +17,12 @@
     <!-- Navigation Buttons Section -->
     <section class="navigation-buttons">
       <div class="nav-buttons-container">
-        <h2 class="nav-section-title">Esplora la Nostra Selezione</h2>
+        <h2 class="nav-section-title" i18n="@@food.nav.title">Esplora la Nostra Selezione</h2>
         <div class="nav-buttons-grid">
           <a routerLink="/cocktails" class="nav-button bar-button">
             <div class="nav-button-icon">🍸</div>
             <div class="nav-button-content">
-              <h3 class="nav-button-title">Bar & Cocktails</h3>
+              <h3 class="nav-button-title" i18n="@@food.nav.bar">Bar & Cocktails</h3>
             </div>
             <div class="nav-button-arrow">→</div>
           </a>
@@ -30,7 +30,7 @@
           <a routerLink="/enoteca" class="nav-button wine-button">
             <div class="nav-button-icon">🍷</div>
             <div class="nav-button-content">
-              <h3 class="nav-button-title">Enoteca</h3>
+              <h3 class="nav-button-title" i18n="@@food.nav.enoteca">Enoteca</h3>
             </div>
             <div class="nav-button-arrow">→</div>
           </a>
@@ -59,7 +59,7 @@
               <div class="section-header">
                 <h4 class="section-title">
                   <span class="section-icon">🍷</span>
-                  Bevanda Inclusa
+                  <span i18n="@@food.menu.beverage.title">Bevanda Inclusa</span>
                 </h4>
               </div>
               <div class="beverage-content">
@@ -71,7 +71,7 @@
               <div class="section-header">
                 <h4 class="section-title">
                   <span class="section-icon">🍽️</span>
-                  Piatti del Menu
+                  <span i18n="@@food.menu.dishes.title">Piatti del Menu</span>
                 </h4>
               </div>
               
@@ -94,7 +94,7 @@
                     <div class="dish-allergens" *ngIf="item.allergens && item.allergens.length > 0">
                       <div class="allergens-header">
                         <span class="allergen-icon">⚠️</span>
-                        <span class="allergen-label">Contiene:</span>
+                        <span class="allergen-label">{{ 'food.allergens.contains' | i18n }}</span>
                       </div>
                       <div class="allergen-tags">
                         <span class="allergen-tag" *ngFor="let allergen of item.allergens">{{ allergen }}</span>
@@ -111,7 +111,7 @@
 
     <!-- Desserts Section -->
     <section class="desserts-section">
-      <h2 class="section-title">🍰 Dessert</h2>
+      <h2 class="section-title" i18n="@@food.desserts.title">🍰 Dessert</h2>
       <div class="dessert-grid">
         <div class="dessert-card" *ngFor="let dessert of desserts">
           <div class="dessert-header">
@@ -120,7 +120,7 @@
           </div>
           <div class="dessert-ingredients" *ngIf="dessert.ingredients" [innerHTML]="dessert.ingredients"></div>
           <div class="dessert-allergens" *ngIf="dessert.allergens && dessert.allergens.length > 0">
-            <span class="allergen-label">Allergeni:</span>
+            <span class="allergen-label">{{ 'food.allergens.label' | i18n }}</span>
             <span class="allergen-list">{{ formatAllergens(dessert.allergens) }}</span>
           </div>
         </div>
@@ -129,7 +129,7 @@
 
     <!-- Beverages Section -->
     <section class="beverages-section">
-      <h2 class="section-title">🥤 Bevande</h2>
+      <h2 class="section-title" i18n="@@food.beverages.title">🥤 Bevande</h2>
       <div class="beverage-grid">
         <div class="beverage-card" *ngFor="let beverage of beverages">
           <div class="beverage-header">
@@ -144,11 +144,11 @@
     <!-- Legal Disclaimers -->
     <section class="legal-section">
       <div class="disclaimer-card">
-        <h3>ℹ️ Informazioni Importanti</h3>
+        <h3>ℹ️ {{ 'food.legal.title' | i18n }}</h3>
         <div class="disclaimer-content">
-          <p><strong>**</strong> I prodotti evidenziati possono contenere allergeni.</p>
-          <p><strong>*</strong> I prodotti contrassegnati con asterisco potrebbero essere congelati in mancanza di disponibilità di prodotto fresco, secondo il decreto legislativo 17 luglio 2013.</p>
-          <p class="menu-variation-notice"><strong>⚠️</strong> Non è consentito apportare variazioni al menù.</p>
+          <p><strong>**</strong> {{ 'food.legal.allergens' | i18n }}</p>
+          <p><strong>*</strong> {{ 'food.legal.frozen' | i18n }}</p>
+          <p class="menu-variation-notice"><strong>⚠️</strong> {{ 'food.legal.variations' | i18n }}</p>
         </div>
       </div>
     </section>
@@ -156,18 +156,18 @@
     <!-- Contact CTA -->
     <section class="cta-section">
       <div class="cta-content">
-        <h2 class="cta-title">Prenota il Tuo Apericena</h2>
+        <h2 class="cta-title">{{ 'food.cta.title' | i18n }}</h2>
         <p class="cta-description">
-          Scegli il tuo orario e prenota subito il tavolo per vivere l'esperienza Villa Luisetta
+          <span i18n="@@food.cta.description">Scegli il tuo orario e prenota subito il tavolo per vivere l'esperienza Villa Luisetta</span>
         </p>
         <div class="cta-actions">
           <a routerLink="/reservations" class="cta-btn primary">
             <span class="cta-icon">🕐</span>
-            <span>Prenota Ora</span>
+            <span>{{ 'food.cta.book' | i18n }}</span>
           </a>
           <a href="tel:+393247829723" class="cta-btn secondary">
             <span class="cta-icon">📞</span>
-            <span>Chiamaci</span>
+            <span>{{ 'food.cta.call' | i18n }}</span>
           </a>
         </div>
       </div>
@@ -180,25 +180,25 @@
       <div class="footer-section">
         <h3>Villa Luisetta</h3>
         <p class="footer-description">
-          Tradizione in evoluzione nel cuore dell'eleganza italiana
+          {{ 'footer.description' | i18n }}
         </p>
         <div class="contact-info">
           <p class="contact-item">
             <span class="contact-icon">✉</span>
-            villaluisettareservations&#64;gmail.com
+            {{ 'contact.email' | i18n }}
           </p>
           <p class="contact-item">
             <span class="contact-icon">📍</span>
             <a href="https://maps.google.com/?q=Via+Roma+86,+Palmi,+Italy" target="_blank" class="address-link">
-              Via Roma 86, Palmi
-              <span class="map-hint">📍 Ottieni indicazioni</span>
+              {{ 'contact.address' | i18n }}
+              <span class="map-hint">{{ 'footer.map.hint' | i18n }}</span>
             </a>
           </p>
         </div>
       </div>
       
       <div class="footer-section">
-        <h4>Seguici</h4>
+        <h4>{{ 'footer.follow' | i18n }}</h4>
         <div class="social-icons">
           <a href="https://www.instagram.com/villaluisetta/" target="_blank" class="social-link" aria-label="Instagram">
             <svg class="social-icon instagram" viewBox="0 0 24 24" fill="currentColor">
@@ -221,13 +221,13 @@
     
     <div class="footer-bottom">
       <div class="footer-links">
-        <a routerLink="/privacy" class="footer-link">Privacy Policy</a>
+        <a routerLink="/privacy" class="footer-link">{{ 'footer.privacy' | i18n }}</a>
         <span class="separator">|</span>
-        <a routerLink="/cookie-policy" class="footer-link">Cookie Policy</a>
+        <a routerLink="/cookie-policy" class="footer-link">{{ 'footer.cookies' | i18n }}</a>
         <span class="separator">|</span>
-        <a routerLink="/legal" class="footer-link">Note Legali</a>
+        <a routerLink="/legal" class="footer-link">{{ 'footer.legal' | i18n }}</a>
       </div>
-      <p>&copy; 2025 Villa Luisetta. Tutti i diritti riservati.</p>
+      <p [innerHTML]="'footer.copyright' | i18n"></p>
       <p class="piva">P.IVA 03242380800</p>
     </div>
   </footer>

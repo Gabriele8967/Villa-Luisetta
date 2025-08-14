@@ -95,8 +95,9 @@
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -515,5 +516,244 @@
   .nav-link.cta-btn {
     min-height: 44px;
     padding: 1rem 2rem;
+  }
+}
+
+/* ========================================
+   LANGUAGE SELECTOR
+======================================== */
+
+/* Desktop Language Selector */
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+  color: var(--french-laundry-gold);
+  background: rgba(201, 169, 97, 0.15);
+}
+
+.lang-btn.active {
+  color: var(--french-laundry-gold);
+  background: rgba(201, 169, 97, 0.2);
+  box-shadow: 0 2px 4px rgba(201, 169, 97, 0.2);
+}
+
+.lang-separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+
+/* Mobile Language Selector */
+.mobile-language-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-lang-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--pure-white);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.mobile-lang-btn:hover {
+  background: rgba(201, 169, 97, 0.15);
+  border-color: var(--french-laundry-gold);
+  color: var(--french-laundry-gold);
+  transform: translateX(4px);
+}
+
+.mobile-lang-btn.active {
+  background: rgba(201, 169, 97, 0.2);
+  border-color: var(--french-laundry-gold);
+  color: var(--french-laundry-gold);
+}
+
+/* ========================================
+   LANGUAGE SELECTOR COMPATTO
+======================================== */
+
+.language-selector-compact {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.lang-current-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--pure-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 70px;
+}
+
+.lang-current-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lang-flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.lang-code {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-arrow {
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: rgba(41, 15, 8, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001;
+  min-width: 140px;
+  overflow: hidden;
+}
+
+.lang-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.lang-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--pure-white);
+}
+
+.lang-option.active {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--accent-gold);
+}
+
+.lang-option .lang-flag {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.lang-option .lang-name {
+  font-weight: 500;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Medium screens - Reduce spacing */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.85rem;
+  }
+  
+  .language-selector-compact {
+    margin-left: 0.5rem;
+  }
+  
+  .lang-current-btn {
+    padding: 0.4rem 0.6rem;
+    min-width: 60px;
+  }
+}
+
+/* Tablet and Mobile */
+@media (max-width: 768px) {
+  .language-selector {
+    display: none;
+  }
+  
+  .language-selector-compact {
+    display: none;
+  }
+  
+  .nav-container {
+    padding: 1rem;
   }
 }

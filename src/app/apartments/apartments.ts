@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from '../shared/navigation/navigation.component';
+import { I18nPipe } from '../pipes/i18n.pipe';
 
 @Component({
   selector: 'app-apartments',
@@ -9,7 +10,8 @@ import { NavigationComponent } from '../shared/navigation/navigation.component';
   imports: [
     CommonModule, 
     RouterModule, 
-    NavigationComponent
+    NavigationComponent,
+    I18nPipe
   ],
   templateUrl: './apartments.html',
   styleUrl: './apartments.css'
@@ -231,5 +233,10 @@ export class Apartments {
     } else if (event.key === 'ArrowLeft') {
       this.prevModalImage();
     }
+  }
+
+  // Get modal counter text for i18n
+  getModalCounterText(): string {
+    return `${this.modalCurrentIndex + 1} di ${this.modalImages.length}`;
   }
 }

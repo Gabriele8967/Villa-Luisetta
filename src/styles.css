@@ -38,6 +38,44 @@ body {
   min-height: 100vh;
   color: var(--pure-white);
   letter-spacing: 0.3px;
+  overflow-x: hidden; /* Previene scroll orizzontale */
+}
+
+/* ========================================
+   GLOBAL MULTILINGUAL LAYOUT FIXES
+======================================== */
+
+/* Ensure text never overflows containers */
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Text containers that might have multilingual content */
+p, span, h1, h2, h3, h4, h5, h6, .hero-title, .footer-description, .hero-subtitle {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Prevent horizontal scrolling from long words */
+.container, .main-content, .footer-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Flex containers should not break on different text lengths */
+.nav-links, .footer-content, .language-selector {
+  min-width: 0; /* Allows flex items to shrink below content size */
+}
+
+/* Ensure buttons and interactive elements are accessible */
+button, .nav-link, .cta-btn {
+  min-height: 44px; /* Touch-friendly minimum */
+  min-width: 44px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 

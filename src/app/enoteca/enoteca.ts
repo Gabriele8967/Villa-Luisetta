@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from '../shared/navigation/navigation.component';
+import { I18nPipe } from '../pipes/i18n.pipe';
+import { I18nService } from '../services/i18n.service';
 
 interface Wine {
   id: number;
@@ -23,17 +25,18 @@ interface WineSection {
 @Component({
   selector: 'app-enoteca',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavigationComponent],
+  imports: [CommonModule, RouterModule, NavigationComponent, I18nPipe],
   templateUrl: './enoteca.html',
   styleUrl: './enoteca.css'
 })
 export class Enoteca {
   selectedSection: string | null = null;
+  private i18nService = inject(I18nService);
 
   wineSections: WineSection[] = [
     {
       id: 'cantina-ippolito',
-      title: 'Cantina Ippolito',
+      title: this.i18nService.translate('wine.section.cantina-ippolito'),
       expanded: false,
       wines: [
         {
@@ -68,7 +71,7 @@ export class Enoteca {
     },
     {
       id: 'cantine-spadafora',
-      title: 'Cantine Spadafora',
+      title: this.i18nService.translate('wine.section.cantine-spadafora'),
       expanded: false,
       wines: [
         {
@@ -124,7 +127,7 @@ export class Enoteca {
     },
     {
       id: 'cantina-antonello-lombardo',
-      title: 'Cantina Antonella Lombardo',
+      title: this.i18nService.translate('wine.section.cantina-antonello-lombardo'),
       expanded: false,
       wines: [
         {
@@ -145,7 +148,7 @@ export class Enoteca {
     },
     {
       id: 'librandi',
-      title: 'Librandi',
+      title: this.i18nService.translate('wine.section.librandi'),
       expanded: false,
       wines: [
         {
@@ -208,7 +211,7 @@ export class Enoteca {
     },
     {
       id: 'tramontana',
-      title: 'Tramontana',
+      title: this.i18nService.translate('wine.section.tramontana'),
       expanded: false,
       wines: [
         {
@@ -229,7 +232,7 @@ export class Enoteca {
     },
     {
       id: 'magna-grecia',
-      title: 'Magna Grecia',
+      title: this.i18nService.translate('wine.section.magna-grecia'),
       expanded: false,
       wines: [
         {
@@ -250,7 +253,7 @@ export class Enoteca {
     },
     {
       id: 'casa-comerci',
-      title: 'Casa Comerci Calabria',
+      title: this.i18nService.translate('wine.section.casa-comerci'),
       expanded: false,
       wines: [
         {
@@ -278,7 +281,7 @@ export class Enoteca {
     },
     {
       id: 'serracavallo',
-      title: 'Serracavallo',
+      title: this.i18nService.translate('wine.section.serracavallo'),
       expanded: false,
       wines: [
         {
@@ -306,7 +309,7 @@ export class Enoteca {
     },
     {
       id: 'berlucchi',
-      title: 'Cantina Berlucchi',
+      title: this.i18nService.translate('wine.section.berlucchi'),
       expanded: false,
       wines: [
         {

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from '../shared/navigation/navigation.component';
 import { CommonModule } from '@angular/common';
+import { I18nPipe } from '../pipes/i18n.pipe';
 
 interface GalleryImage {
   src: string;
@@ -11,7 +12,7 @@ interface GalleryImage {
 
 @Component({
   selector: 'app-gallery',
-  imports: [RouterModule, NavigationComponent, CommonModule],
+  imports: [RouterModule, NavigationComponent, CommonModule, I18nPipe],
   templateUrl: './gallery.html',
   styleUrl: './gallery.css',
   standalone: true,

@@ -7,17 +7,16 @@
     <section class="hero-showcase">
       <div class="hero-content">
         <h1 class="hero-title">
-          <span class="title-line">Le nostre</span>
-          <span class="title-line highlight">Stanze</span>
+          <span class="title-line">{{ 'apartments.hero.title.line1' | i18n }}</span>
+          <span class="title-line highlight">{{ 'apartments.hero.title.line2' | i18n }}</span>
         </h1>
         <p class="hero-description">
-          Scopri il comfort dei nostri appartamenti dove ogni dettaglio 
-          è curato per offrirti un soggiorno piacevole a Villa Luisetta
+          <span>{{ 'apartments.hero.description' | i18n }}</span>
         </p>
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-number">6</span>
-            <span class="stat-label">Stanze Disponibili</span>
+            <span class="stat-label">{{ 'apartments.hero.stat.label' | i18n }}</span>
           </div>
         </div>
       </div>
@@ -28,7 +27,7 @@
     <!-- Apartments Showcase -->
     <section class="apartments-showcase">
       <div class="showcase-header">
-        <h2 class="section-title">Scegli la Tua Stanza</h2>
+        <h2 class="section-title">{{ 'apartments.showcase.title' | i18n }}</h2>
       </div>
 
       <div class="apartments-masonry">
@@ -83,7 +82,7 @@
                 <!-- Click indicator -->
                 <div class="click-indicator">
                   <span class="indicator-icon">🔍</span>
-                  <span class="indicator-text">Clicca per vedere tutte le foto</span>
+                  <span class="indicator-text" i18n="@@apartments.image.click.hint">Clicca per vedere tutte le foto</span>
                 </div>
               </div>
             </div>
@@ -99,7 +98,7 @@
               <button class="contact-btn-main" 
                     (click)="scrollToContact()"
                     [attr.aria-label]="'Contatta Villa Luisetta per prenotare la stanza ' + apartment.name">
-                <span class="btn-text">Contattaci</span>
+                <span class="btn-text">{{ 'apartments.contact.button' | i18n }}</span>
                 <span class="btn-arrow" aria-hidden="true">📞</span>
               </button>
             </div>
@@ -114,19 +113,18 @@
     <!-- Call to Action -->
     <section class="cta-section">
       <div class="cta-content">
-        <h2 class="cta-title">Pronto per il Tuo Soggiorno?</h2>
+        <h2 class="cta-title">{{ 'apartments.cta.title' | i18n }}</h2>
         <p class="cta-description">
-          Contattaci per ricevere informazioni e scoprire 
-          le nostre disponibilità per le tue date
+          <span>{{ 'apartments.cta.description' | i18n }}</span>
         </p>
         <div class="cta-actions">
           <a href="mailto:{{ contactInfo.email }}" class="cta-btn primary">
             <span class="cta-icon">✉</span>
-            <span>Richiedi Disponibilità</span>
+            <span>{{ 'apartments.cta.email' | i18n }}</span>
           </a>
           <a href="tel:+393247829723" class="cta-btn secondary">
             <span class="cta-icon">📞</span>
-            <span>Chiamaci</span>
+            <span>{{ 'apartments.cta.phone' | i18n }}</span>
           </a>
         </div>
       </div>
@@ -177,7 +175,7 @@
         
         <!-- Modal Counter -->
         <div class="modal-counter" *ngIf="modalImages.length > 1">
-          {{ modalCurrentIndex + 1 }} di {{ modalImages.length }}
+          <span i18n="@@apartments.modal.counter" [innerHTML]="getModalCounterText()"></span>
         </div>
       </div>
       

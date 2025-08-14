@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="it-IT" target-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <!-- Home Page -->
+      <trans-unit id="home.hero.title" datatype="html">
+        <source>Un nuovo concept di ospitalità e degustazione, immerso tra l'arte e la storia della città di Palmi</source>
+        <target>A new concept of hospitality and tasting, immersed in the art and history of the city of Palmi</target>
+      </trans-unit>
+      <trans-unit id="home.button.rooms" datatype="html">
+        <source>Stanze</source>
+        <target>Rooms</target>
+      </trans-unit>
+      <trans-unit id="home.button.rooms.subtitle" datatype="html">
+        <source>Soggiorna con comfort</source>
+        <target>Stay with comfort</target>
+      </trans-unit>
+      <trans-unit id="home.button.gallery" datatype="html">
+        <source>Gallery</source>
+        <target>Gallery</target>
+      </trans-unit>
+      <trans-unit id="home.button.gallery.subtitle" datatype="html">
+        <source>Scopri la bellezza</source>
+        <target>Discover the beauty</target>
+      </trans-unit>
+      <trans-unit id="home.button.food" datatype="html">
+        <source>Aperitivi</source>
+        <target>Aperitifs</target>
+      </trans-unit>
+      <trans-unit id="home.button.food.subtitle" datatype="html">
+        <source>Esperienza culinaria</source>
+        <target>Culinary experience</target>
+      </trans-unit>
+      <trans-unit id="home.button.bar" datatype="html">
+        <source>Bar</source>
+        <target>Bar</target>
+      </trans-unit>
+      <trans-unit id="home.button.bar.subtitle" datatype="html">
+        <source>Gin, Amari e Grappe</source>
+        <target>Gin, Bitters and Grappa</target>
+      </trans-unit>
+      
+      <!-- Navigation -->
+      <trans-unit id="nav.rooms" datatype="html">
+        <source>Stanze</source>
+        <target>Rooms</target>
+      </trans-unit>
+      <trans-unit id="nav.gallery" datatype="html">
+        <source>Gallery</source>
+        <target>Gallery</target>
+      </trans-unit>
+      <trans-unit id="nav.menu" datatype="html">
+        <source>Menu</source>
+        <target>Menu</target>
+      </trans-unit>
+      <trans-unit id="nav.bar" datatype="html">
+        <source>Bar</source>
+        <target>Bar</target>
+      </trans-unit>
+      <trans-unit id="nav.enoteca" datatype="html">
+        <source>Enoteca</source>
+        <target>Wine Shop</target>
+      </trans-unit>
+      <trans-unit id="nav.book" datatype="html">
+        <source>🕐 Prenota</source>
+        <target>🕐 Book</target>
+      </trans-unit>
+      
+      <!-- Footer -->
+      <trans-unit id="footer.description" datatype="html">
+        <source>Tradizione in evoluzione nel cuore dell'eleganza italiana</source>
+        <target>Tradition in evolution in the heart of Italian elegance</target>
+      </trans-unit>
+      <trans-unit id="footer.follow" datatype="html">
+        <source>Seguici</source>
+        <target>Follow us</target>
+      </trans-unit>
+      <trans-unit id="footer.map.hint" datatype="html">
+        <source>📍 Ottieni indicazioni</source>
+        <target>📍 Get directions</target>
+      </trans-unit>
+      
+      <!-- Reservations -->
+      <trans-unit id="reservations.title" datatype="html">
+        <source>Prenota il Tuo Tavolo</source>
+        <target>Book Your Table</target>
+      </trans-unit>
+      <trans-unit id="reservations.subtitle" datatype="html">
+        <source>Scegli l'orario perfetto per la tua esperienza culinaria a Villa Luisetta</source>
+        <target>Choose the perfect time for your culinary experience at Villa Luisetta</target>
+      </trans-unit>
+      <trans-unit id="reservations.slot.label" datatype="html">
+        <source>Prenotazione</source>
+        <target>Reservation</target>
+      </trans-unit>
+      <trans-unit id="reservations.slot.notice" datatype="html">
+        <source>Il tavolo deve essere liberato entro la fine dell'orario prenotato</source>
+        <target>The table must be vacated by the end of the reserved time slot</target>
+      </trans-unit>
+      <trans-unit id="reservations.book.whatsapp" datatype="html">
+        <source>Prenota via WhatsApp</source>
+        <target>Book via WhatsApp</target>
+      </trans-unit>
+      <trans-unit id="reservations.info.title" datatype="html">
+        <source>Informazioni Prenotazioni</source>
+        <target>Reservation Information</target>
+      </trans-unit>
+      <trans-unit id="reservations.info.confirm.title" datatype="html">
+        <source>Conferma Immediata</source>
+        <target>Immediate Confirmation</target>
+      </trans-unit>
+      <trans-unit id="reservations.info.confirm.text" datatype="html">
+        <source>Riceverai conferma della prenotazione tramite WhatsApp</source>
+        <target>You will receive booking confirmation via WhatsApp</target>
+      </trans-unit>
+      <trans-unit id="reservations.policy.title" datatype="html">
+        <source>Politica di Puntualità</source>
+        <target>Punctuality Policy</target>
+      </trans-unit>
+      <trans-unit id="reservations.policy.text" datatype="html">
+        <source>Si prega di rispettare l'orario di prenotazione. Trascorsi 15 minuti dall'orario concordato, il tavolo verrà rilasciato per consentire l'accoglienza di altri ospiti</source>
+        <target>Please respect your reservation time. After 15 minutes from the agreed time, the table will be released to allow other guests to be accommodated</target>
+      </trans-unit>
+      <trans-unit id="reservations.info.menu.title" datatype="html">
+        <source>Menu Completo</source>
+        <target>Complete Menu</target>
+      </trans-unit>
+      <trans-unit id="reservations.info.menu.text" datatype="html">
+        <source>Tutti i nostri menu sono disponibili in ogni fascia oraria</source>
+        <target>All our menus are available during every time slot</target>
+      </trans-unit>
+
+      <!-- Apartments -->
+      <trans-unit id="apartments.hero.title.line1" datatype="html">
+        <source>Le nostre</source>
+        <target>Our</target>
+      </trans-unit>
+      <trans-unit id="apartments.hero.title.line2" datatype="html">
+        <source>Stanze</source>
+        <target>Rooms</target>
+      </trans-unit>
+      <trans-unit id="apartments.hero.description" datatype="html">
+        <source>Scopri il comfort dei nostri appartamenti dove ogni dettaglio è curato per offrirti un soggiorno piacevole a Villa Luisetta</source>
+        <target>Discover the comfort of our apartments where every detail is cared for to offer you a pleasant stay at Villa Luisetta</target>
+      </trans-unit>
+      <trans-unit id="apartments.hero.stat.label" datatype="html">
+        <source>Stanze Disponibili</source>
+        <target>Available Rooms</target>
+      </trans-unit>
+      <trans-unit id="apartments.showcase.title" datatype="html">
+        <source>Scegli la Tua Stanza</source>
+        <target>Choose Your Room</target>
+      </trans-unit>
+      <trans-unit id="apartments.contact.button" datatype="html">
+        <source>Contattaci</source>
+        <target>Contact Us</target>
+      </trans-unit>
+      <trans-unit id="apartments.cta.title" datatype="html">
+        <source>Pronto per il Tuo Soggiorno?</source>
+        <target>Ready for Your Stay?</target>
+      </trans-unit>
+      <trans-unit id="apartments.cta.description" datatype="html">
+        <source>Contattaci per ricevere informazioni e scoprire le nostre disponibilità per le tue date</source>
+        <target>Contact us to receive information and discover our availability for your dates</target>
+      </trans-unit>
+      <trans-unit id="apartments.cta.email" datatype="html">
+        <source>Richiedi Disponibilità</source>
+        <target>Request Availability</target>
+      </trans-unit>
+      <trans-unit id="apartments.cta.phone" datatype="html">
+        <source>Chiamaci</source>
+        <target>Call Us</target>
+      </trans-unit>
+
+      <!-- Gallery -->
+      <trans-unit id="gallery.hero.title" datatype="html">
+        <source>Gallery</source>
+        <target>Gallery</target>
+      </trans-unit>
+      <trans-unit id="gallery.hero.subtitle" datatype="html">
+        <source>Scopri gli angoli più suggestivi di Villa Luisetta attraverso le nostre immagini</source>
+        <target>Discover the most evocative corners of Villa Luisetta through our images</target>
+      </trans-unit>
+
+      <!-- Food -->
+      <trans-unit id="food.hero.title" datatype="html">
+        <source>Menu Apericena</source>
+        <target>Aperitif Menu</target>
+      </trans-unit>
+      <trans-unit id="food.hero.subtitle" datatype="html">
+        <source>Scopri i nostri menu degustazione con prodotti locali e specialità calabresi</source>
+        <target>Discover our tasting menus with local products and Calabrian specialties</target>
+      </trans-unit>
+      <trans-unit id="food.cta.title" datatype="html">
+        <source>Prenota il Tuo Apericena</source>
+        <target>Book Your Aperitif</target>
+      </trans-unit>
+      <trans-unit id="food.cta.book" datatype="html">
+        <source>Prenota Ora</source>
+        <target>Book Now</target>
+      </trans-unit>
+      <trans-unit id="food.cta.call" datatype="html">
+        <source>Chiamaci</source>
+        <target>Call Us</target>
+      </trans-unit>
+
+      <!-- Cocktails -->
+      <trans-unit id="cocktails.hero.title" datatype="html">
+        <source>Bar Villa Luisetta</source>
+        <target>Villa Luisetta Bar</target>
+      </trans-unit>
+      <trans-unit id="cocktails.hero.subtitle" datatype="html">
+        <source>Gin, amari, grappe e vini selezionati per un momento di puro relax</source>
+        <target>Gin, bitters, grappa and selected wines for a moment of pure relaxation</target>
+      </trans-unit>
+
+      <!-- Enoteca -->
+      <trans-unit id="enoteca.hero.title" datatype="html">
+        <source>Enoteca Villa Luisetta</source>
+        <target>Villa Luisetta Wine Shop</target>
+      </trans-unit>
+      <trans-unit id="enoteca.hero.subtitle" datatype="html">
+        <source>Tradizione vinicola e distillati d'eccellenza nel cuore della Calabria</source>
+        <target>Wine tradition and excellent spirits in the heart of Calabria</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

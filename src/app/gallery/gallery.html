@@ -5,8 +5,8 @@
   <main class="main-content">
     <div class="hero-section">
       <div class="hero-text">
-        <h1 class="hero-title">Gallery</h1>
-        <p class="hero-subtitle">Scopri gli angoli più suggestivi di Villa Luisetta attraverso le nostre immagini</p>
+        <h1 class="hero-title">{{ 'gallery.hero.title' | i18n }}</h1>
+        <p class="hero-subtitle">{{ 'gallery.hero.subtitle' | i18n }}</p>
         <hr class="hero-ornament">
       </div>
     </div>
@@ -58,7 +58,7 @@
           <h2 class="lightbox-title">Villa Luisetta</h2>
           <span class="lightbox-counter">{{ getCurrentImageNumber() }}</span>
         </div>
-        <button class="lightbox-close" (click)="closeLightbox()" aria-label="Chiudi">
+        <button class="lightbox-close" (click)="closeLightbox()" i18n-aria-label="@@gallery.lightbox.close" aria-label="Chiudi">
           <span class="close-icon">×</span>
         </button>
       </div>
@@ -73,7 +73,7 @@
         <!-- Navigation buttons -->
         <button class="lightbox-nav lightbox-prev" 
                 (click)="prevImage()" 
-                aria-label="Immagine precedente"
+                i18n-aria-label="@@gallery.lightbox.prev" aria-label="Immagine precedente"
                 [disabled]="isImageLoading">
           <span class="nav-icon">‹</span>
         </button>
@@ -87,7 +87,7 @@
         
         <button class="lightbox-nav lightbox-next" 
                 (click)="nextImage()" 
-                aria-label="Immagine successiva"
+                i18n-aria-label="@@gallery.lightbox.next" aria-label="Immagine successiva"
                 [disabled]="isImageLoading">
           <span class="nav-icon">›</span>
         </button>
@@ -103,17 +103,17 @@
       <div class="footer-section">
         <h3>Villa Luisetta</h3>
         <p class="footer-description">
-          Tradizione in evoluzione nel cuore dell'eleganza italiana
+          {{ 'footer.description' | i18n }}
         </p>
         <div class="contact-info">
           <p class="contact-item">
             <span class="contact-icon">✉</span>
-            villaluisettareservations&#64;gmail.com
+            {{ 'contact.email' | i18n }}
           </p>
           <p class="contact-item">
             <span class="contact-icon">📍</span>
             <a href="https://maps.google.com/?q=Via+Roma+86,+Palmi,+Italy" target="_blank" class="address-link">
-              Via Roma 86, Palmi
+              {{ 'contact.address' | i18n }}
               <span class="map-hint">📍 Ottieni indicazioni</span>
             </a>
           </p>
@@ -121,7 +121,7 @@
       </div>
       
       <div class="footer-section">
-        <h4>Seguici</h4>
+        <h4>{{ 'footer.follow' | i18n }}</h4>
         <div class="social-icons">
           <a href="https://www.instagram.com/villaluisetta/" target="_blank" class="social-link" aria-label="Instagram">
             <svg class="social-icon instagram" viewBox="0 0 24 24" fill="currentColor">
@@ -143,7 +143,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2024 Villa Luisetta. Tutti i diritti riservati.</p>
+      <p [innerHTML]="'footer.copyright' | i18n"></p>
       <p class="piva">P.IVA 03242380800</p>
     </div>
   </footer>

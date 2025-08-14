@@ -181,6 +181,9 @@
     margin-bottom: 1.5rem;
     line-height: 1.6;
     max-width: 400px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .contact-info {
@@ -354,6 +357,8 @@
     
     .footer-description {
         max-width: none;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
     
     .contact-info {

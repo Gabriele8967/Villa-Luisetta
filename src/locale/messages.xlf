@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="it-IT" datatype="plaintext" original="ng2.template">
+    <body>
+      <!-- Home Page -->
+      <trans-unit id="home.hero.title" datatype="html">
+        <source>Un nuovo concept di ospitalità e degustazione, immerso tra l'arte e la storia della città di Palmi</source>
+      </trans-unit>
+      <trans-unit id="home.button.rooms" datatype="html">
+        <source>Stanze</source>
+      </trans-unit>
+      <trans-unit id="home.button.rooms.subtitle" datatype="html">
+        <source>Soggiorna con comfort</source>
+      </trans-unit>
+      <trans-unit id="home.button.gallery" datatype="html">
+        <source>Gallery</source>
+      </trans-unit>
+      <trans-unit id="home.button.gallery.subtitle" datatype="html">
+        <source>Scopri la bellezza</source>
+      </trans-unit>
+      <trans-unit id="home.button.food" datatype="html">
+        <source>Aperitivi</source>
+      </trans-unit>
+      <trans-unit id="home.button.food.subtitle" datatype="html">
+        <source>Esperienza culinaria</source>
+      </trans-unit>
+      <trans-unit id="home.button.bar" datatype="html">
+        <source>Bar</source>
+      </trans-unit>
+      <trans-unit id="home.button.bar.subtitle" datatype="html">
+        <source>Gin, Amari e Grappe</source>
+      </trans-unit>
+      
+      <!-- Navigation -->
+      <trans-unit id="nav.rooms" datatype="html">
+        <source>Stanze</source>
+      </trans-unit>
+      <trans-unit id="nav.gallery" datatype="html">
+        <source>Gallery</source>
+      </trans-unit>
+      <trans-unit id="nav.menu" datatype="html">
+        <source>Menu</source>
+      </trans-unit>
+      <trans-unit id="nav.bar" datatype="html">
+        <source>Bar</source>
+      </trans-unit>
+      <trans-unit id="nav.enoteca" datatype="html">
+        <source>Enoteca</source>
+      </trans-unit>
+      <trans-unit id="nav.book" datatype="html">
+        <source>🕐 Prenota</source>
+      </trans-unit>
+      
+      <!-- Footer -->
+      <trans-unit id="footer.description" datatype="html">
+        <source>Tradizione in evoluzione nel cuore dell'eleganza italiana</source>
+      </trans-unit>
+      <trans-unit id="footer.follow" datatype="html">
+        <source>Seguici</source>
+      </trans-unit>
+      <trans-unit id="footer.map.hint" datatype="html">
+        <source>📍 Ottieni indicazioni</source>
+      </trans-unit>
+      
+      <!-- Reservations -->
+      <trans-unit id="reservations.title" datatype="html">
+        <source>Prenota il Tuo Tavolo</source>
+      </trans-unit>
+      <trans-unit id="reservations.subtitle" datatype="html">
+        <source>Scegli l'orario perfetto per la tua esperienza culinaria a Villa Luisetta</source>
+      </trans-unit>
+      <trans-unit id="reservations.slot.label" datatype="html">
+        <source>Prenotazione</source>
+      </trans-unit>
+      <trans-unit id="reservations.slot.notice" datatype="html">
+        <source>Il tavolo deve essere liberato entro la fine dell'orario prenotato</source>
+      </trans-unit>
+      <trans-unit id="reservations.book.whatsapp" datatype="html">
+        <source>Prenota via WhatsApp</source>
+      </trans-unit>
+      <trans-unit id="reservations.info.title" datatype="html">
+        <source>Informazioni Prenotazioni</source>
+      </trans-unit>
+      <trans-unit id="reservations.info.confirm.title" datatype="html">
+        <source>Conferma Immediata</source>
+      </trans-unit>
+      <trans-unit id="reservations.info.confirm.text" datatype="html">
+        <source>Riceverai conferma della prenotazione tramite WhatsApp</source>
+      </trans-unit>
+      <trans-unit id="reservations.policy.title" datatype="html">
+        <source>Politica di Puntualità</source>
+      </trans-unit>
+      <trans-unit id="reservations.policy.text" datatype="html">
+        <source>Si prega di rispettare l'orario di prenotazione. Trascorsi 15 minuti dall'orario concordato, il tavolo verrà rilasciato per consentire l'accoglienza di altri ospiti</source>
+      </trans-unit>
+      <trans-unit id="reservations.info.menu.title" datatype="html">
+        <source>Menu Completo</source>
+      </trans-unit>
+      <trans-unit id="reservations.info.menu.text" datatype="html">
+        <source>Tutti i nostri menu sono disponibili in ogni fascia oraria</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

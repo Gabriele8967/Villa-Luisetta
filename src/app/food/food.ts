@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from '../shared/navigation/navigation.component';
+import { I18nPipe } from '../pipes/i18n.pipe';
+import { I18nService } from '../services/i18n.service';
 
 interface MenuItem {
   id: number;
@@ -24,125 +26,126 @@ interface MenuOption {
 @Component({
   selector: 'app-food',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavigationComponent],
+  imports: [CommonModule, RouterModule, NavigationComponent, I18nPipe],
   templateUrl: './food.html',
   styleUrl: './food.css'
 })
 export class Food {
   selectedMenu: string | null = null;
+  private i18nService = inject(I18nService);
 
   menuOptions: MenuOption[] = [
     {
       id: 'aperitivo-classico',
-      title: 'Aperitivo Classico',
+      title: this.i18nService.translate('menu.aperitivo-classico.title'),
       price: '€9',
-      beverage: '1 calice di vino (cantine Statti bianco-rosso-rosato) o cocktail base',
+      beverage: this.i18nService.translate('menu.aperitivo-classico.beverage'),
       items: [
         {
           id: 1,
-          name: 'Stuzzichini Vari',
-          ingredients: 'Selezione di stuzzichini misti'
+          name: this.i18nService.translate('menu.item.stuzzichini-vari.name'),
+          ingredients: this.i18nService.translate('menu.item.stuzzichini-vari.ingredients')
         }
       ]
     },
     {
       id: 'apericena-terra',
-      title: 'Apericena Villa Luisetta Terra',
+      title: this.i18nService.translate('menu.apericena-terra.title'),
       price: '€15/persona',
-      beverage: '1 calice di vino (cantine Statti bianco-rosso-rosato) o cocktail base',
+      beverage: this.i18nService.translate('menu.apericena-terra.beverage'),
       items: [
         {
           id: 2,
-          name: 'Tagliere di Salumi e Formaggi',
-          ingredients: 'salumi tipici calabresi (secondo disponibilità), **lattosio pecorino**, miele',
+          name: this.i18nService.translate('menu.item.tagliere-salumi.name'),
+          ingredients: this.i18nService.translate('menu.item.tagliere-salumi.ingredients'),
           allergens: ['lattosio'],
           frozen: true
         },
         {
           id: 3,
-          name: 'Fiori di Zucca con Stracciatella',
-          ingredients: 'farina e **lattosio vaccino**',
+          name: this.i18nService.translate('menu.item.fiori-zucca-stracciatella.name'),
+          ingredients: this.i18nService.translate('menu.item.fiori-zucca-stracciatella.ingredients'),
           allergens: ['glutine', 'lattosio']
         },
         {
           id: 4,
-          name: 'Parmigiana di Melanzane',
-          ingredients: '**pomodoro**, mollica, **lattosio**, olio, **melanzane**',
+          name: this.i18nService.translate('menu.item.parmigiana-melanzane.name'),
+          ingredients: this.i18nService.translate('menu.item.parmigiana-melanzane.ingredients'),
           allergens: ['glutine', 'lattosio']
         },
         {
           id: 5,
-          name: 'Polpette di Zucchine',
-          ingredients: '**lattosio**, mollica, olio, zucchine',
+          name: this.i18nService.translate('menu.item.polpette-zucchine.name'),
+          ingredients: this.i18nService.translate('menu.item.polpette-zucchine.ingredients'),
           allergens: ['glutine', 'lattosio']
         },
         {
           id: 6,
-          name: 'Crepes di Rucola con Stracciatella',
-          ingredients: 'uova, farina, sale, rucola, **stracciatella**',
+          name: this.i18nService.translate('menu.item.crepes-rucola.name'),
+          ingredients: this.i18nService.translate('menu.item.crepes-rucola.ingredients'),
           allergens: ['uova', 'glutine', 'latte']
         }
       ]
     },
     {
       id: 'apericena-mare',
-      title: 'Apericena Premium Villa Luisetta Mare',
+      title: this.i18nService.translate('menu.apericena-mare.title'),
       price: '€30/persona',
-      beverage: 'calice di vino (cantine Statti bianco-rosso-rosato) o cocktail premium',
+      beverage: this.i18nService.translate('menu.apericena-mare.beverage'),
       items: [
         {
           id: 7,
-          name: 'Alzatina di Crudo di Mare',
-          ingredients: 'con **gambero rosso**',
+          name: this.i18nService.translate('menu.item.alzatina-crudo.name'),
+          ingredients: this.i18nService.translate('menu.item.alzatina-crudo.ingredients'),
           allergens: ['crostacei'],
           frozen: true
         },
         {
           id: 8,
-          name: 'Tartare di Pescato',
-          ingredients: 'secondo disponibilità',
+          name: this.i18nService.translate('menu.item.tartare-pescato.name'),
+          ingredients: this.i18nService.translate('menu.item.tartare-pescato.ingredients'),
           allergens: ['pesce'],
           frozen: true
         },
         {
           id: 9,
-          name: 'Cannolo con Mousse di Bufala',
-          ingredients: 'mousse di **bufala** e **gambero**',
+          name: this.i18nService.translate('menu.item.cannolo-mousse.name'),
+          ingredients: this.i18nService.translate('menu.item.cannolo-mousse.ingredients'),
           allergens: ['glutine', 'latte', 'crostacei'],
           frozen: true
         },
         {
           id: 10,
-          name: 'Ostrica',
-          ingredients: '**ostrica**',
+          name: this.i18nService.translate('menu.item.ostrica.name'),
+          ingredients: this.i18nService.translate('menu.item.ostrica.ingredients'),
           allergens: ['molluschi'],
           frozen: true
         },
         {
           id: 11,
-          name: 'Insalata di Gambero',
-          ingredients: '**gambero**, avocado e lime',
+          name: this.i18nService.translate('menu.item.insalata-gambero.name'),
+          ingredients: this.i18nService.translate('menu.item.insalata-gambero.ingredients'),
           allergens: ['crostacei'],
           frozen: true
         },
         {
           id: 12,
-          name: 'Polpette di Pesce',
-          ingredients: 'fatte con **lattosio**, mollica e **uova**, con pesto di fiori di zucca e **mandorle** tostate',
+          name: this.i18nService.translate('menu.item.polpette-pesce.name'),
+          ingredients: this.i18nService.translate('menu.item.polpette-pesce.ingredients'),
           allergens: ['pesce', 'lattosio', 'uova', 'glutine', 'frutta secca'],
           frozen: true
         },
         {
           id: 13,
-          name: 'Involtino di Pesce',
-          ingredients: 'secondo disponibilità',
+          name: this.i18nService.translate('menu.item.involtino-pesce.name'),
+          ingredients: this.i18nService.translate('menu.item.involtino-pesce.ingredients'),
           allergens: ['pesce'],
           frozen: true
         },
         {
           id: 14,
-          name: 'Polpo Arrosto',
-          ingredients: '**polpo** arrosto su vellutata di patate (patate, burro e latte)',
+          name: this.i18nService.translate('menu.item.polpo-arrosto.name'),
+          ingredients: this.i18nService.translate('menu.item.polpo-arrosto.ingredients'),
           allergens: ['molluschi', 'latte'],
           frozen: true
         }
@@ -150,56 +153,56 @@ export class Food {
     },
     {
       id: 'tradizione-ninetta',
-      title: 'Aperitivo della Tradizione Ninetta',
+      title: this.i18nService.translate('menu.tradizione-ninetta.title'),
       price: '€20/persona',
-      beverage: 'calice di vino (cantine Statti bianco-rosso-rosato) o cocktail premium',
+      beverage: this.i18nService.translate('menu.tradizione-ninetta.beverage'),
       items: [
         {
           id: 15,
-          name: 'Peperone Ripieno',
-          ingredients: '**pomodoro**, mollica, **lattosio**, uova',
+          name: this.i18nService.translate('menu.item.peperone-ripieno.name'),
+          ingredients: this.i18nService.translate('menu.item.peperone-ripieno.ingredients'),
           allergens: ['glutine', 'lattosio', 'uova']
         },
         {
           id: 16,
-          name: 'Melanzana Ripiena',
-          ingredients: '**pomodoro**, mollica, **lattosio**, uova',
+          name: this.i18nService.translate('menu.item.melanzana-ripiena.name'),
+          ingredients: this.i18nService.translate('menu.item.melanzana-ripiena.ingredients'),
           allergens: ['glutine', 'lattosio', 'uova']
         },
         {
           id: 17,
-          name: 'Bruschette Miste',
-          ingredients: 'varie preparazioni',
+          name: this.i18nService.translate('menu.item.bruschette-miste.name'),
+          ingredients: this.i18nService.translate('menu.item.bruschette-miste.ingredients'),
           allergens: ['glutine']
         },
         {
           id: 18,
-          name: 'Frittelle di Fiori di Zucca',
-          ingredients: '**aglio**, **lattosio**, farina, basilico',
+          name: this.i18nService.translate('menu.item.frittelle-fiori.name'),
+          ingredients: this.i18nService.translate('menu.item.frittelle-fiori.ingredients'),
           allergens: ['glutine', 'lattosio']
         },
         {
           id: 19,
-          name: 'Zeppole',
-          ingredients: 'farina, patate, lievito di birra, olio, sale',
+          name: this.i18nService.translate('menu.item.zeppole.name'),
+          ingredients: this.i18nService.translate('menu.item.zeppole.ingredients'),
           allergens: ['glutine']
         },
         {
           id: 20,
-          name: 'Polpettine al Sugo',
-          ingredients: 'carne di **vitello**, **pomodoro**, aglio, **lattosio**, pane, prezzemolo, basilico',
+          name: this.i18nService.translate('menu.item.polpettine-sugo.name'),
+          ingredients: this.i18nService.translate('menu.item.polpettine-sugo.ingredients'),
           allergens: ['glutine', 'lattosio']
         },
         {
           id: 21,
-          name: 'Crocchette di Patate',
-          ingredients: '**lattosio**, patate, **uovo**',
+          name: this.i18nService.translate('menu.item.crocchette-patate.name'),
+          ingredients: this.i18nService.translate('menu.item.crocchette-patate.ingredients'),
           allergens: ['lattosio', 'uova']
         },
         {
           id: 22,
-          name: 'Involtino di Peperone Arrosto',
-          ingredients: 'mollica, olio, sale',
+          name: this.i18nService.translate('menu.item.involtino-peperone.name'),
+          ingredients: this.i18nService.translate('menu.item.involtino-peperone.ingredients'),
           allergens: ['glutine']
         }
       ]
@@ -209,27 +212,28 @@ export class Food {
   desserts: MenuItem[] = [
     {
       id: 23,
-      name: 'Tiramisù',
-      ingredients: '<strong>mascarpone</strong>, <strong>uova</strong>, savoiardi, caffè, zucchero',
+      name: this.i18nService.translate('menu.dessert.tiramisu.name'),
+      ingredients: this.i18nService.translate('menu.dessert.tiramisu.ingredients'),
       price: '€5',
       allergens: ['latte', 'uova', 'glutine']
     },
     {
       id: 24,
-      name: 'Sorbetto al Limone',
+      name: this.i18nService.translate('menu.dessert.sorbetto.name'),
       price: '€5',
-      ingredients: 'limone, zucchero, acqua'
+      ingredients: this.i18nService.translate('menu.dessert.sorbetto.ingredients')
     },
     {
       id: 25,
-      name: 'Crostatina con Crema Pasticcera',
-      ingredients: 'crema pasticcera e frutta fresca',
+      name: this.i18nService.translate('menu.dessert.crostatina.name'),
+      ingredients: this.i18nService.translate('menu.dessert.crostatina.ingredients'),
       price: '€5',
       allergens: ['glutine', 'latte', 'uova']
     },
     {
       id: 26,
-      name: 'Tartufo al Cioccolato',
+      name: this.i18nService.translate('menu.dessert.tartufo.name'),
+      ingredients: this.i18nService.translate('menu.dessert.tartufo.ingredients'),
       price: '€5',
       allergens: ['latte']
     }
@@ -238,22 +242,22 @@ export class Food {
   beverages: MenuItem[] = [
     {
       id: 27,
-      name: 'Acqua San Pellegrino frizzante',
+      name: this.i18nService.translate('menu.beverage.acqua-frizzante.name'),
       price: '€2,5'
     },
     {
       id: 28,
-      name: 'Acqua Panna naturale',
+      name: this.i18nService.translate('menu.beverage.acqua-naturale.name'),
       price: '€2,5'
     },
     {
       id: 29,
-      name: 'Coca Cola normale/zero',
+      name: this.i18nService.translate('menu.beverage.coca-cola.name'),
       price: '€3'
     },
     {
       id: 30,
-      name: 'Schweppes',
+      name: this.i18nService.translate('menu.beverage.schweppes.name'),
       price: '€3'
     }
   ];

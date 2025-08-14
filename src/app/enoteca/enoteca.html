@@ -6,9 +6,9 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 class="hero-title">Enoteca Villa Luisetta</h1>
+        <h1 class="hero-title">{{ 'enoteca.hero.title' | i18n }}</h1>
         <p class="hero-subtitle">
-          Tradizione vinicola e distillati d'eccellenza nel cuore della Calabria
+          <span>{{ 'enoteca.hero.subtitle' | i18n }}</span>
         </p>
         <hr class="hero-ornament">
       </div>
@@ -71,18 +71,18 @@
     <!-- Contact CTA -->
     <section class="cta-section">
       <div class="cta-content">
-        <h2 class="cta-title">Prenota la Tua Degustazione</h2>
+        <h2 class="cta-title">{{ 'enoteca.cta.title' | i18n }}</h2>
         <p class="cta-description">
-          Scegli il tuo orario e vieni a degustare i nostri vini e distillati selezionati
+          {{ 'enoteca.cta.description' | i18n }}
         </p>
         <div class="cta-actions">
           <a routerLink="/reservations" class="cta-btn primary">
             <span class="cta-icon">🕐</span>
-            <span>Prenota Ora</span>
+            <span>{{ 'enoteca.cta.book' | i18n }}</span>
           </a>
           <a href="tel:+393247829723" class="cta-btn secondary">
             <span class="cta-icon">📞</span>
-            <span>Chiamaci</span>
+            <span>{{ 'enoteca.cta.call' | i18n }}</span>
           </a>
         </div>
       </div>
@@ -95,17 +95,17 @@
       <div class="footer-section">
         <h3>Villa Luisetta</h3>
         <p class="footer-description">
-          Tradizione in evoluzione nel cuore dell'eleganza italiana
+          {{ 'footer.description' | i18n }}
         </p>
         <div class="contact-info">
           <p class="contact-item">
             <span class="contact-icon">✉</span>
-            villaluisettareservations&#64;gmail.com
+            {{ 'contact.email' | i18n }}
           </p>
           <p class="contact-item">
             <span class="contact-icon">📍</span>
             <a href="https://maps.google.com/?q=Via+Roma+86,+Palmi,+Italy" target="_blank" class="address-link">
-              Via Roma 86, Palmi
+              {{ 'contact.address' | i18n }}
               <span class="map-hint">📍 Ottieni indicazioni</span>
             </a>
           </p>
@@ -113,7 +113,7 @@
       </div>
       
       <div class="footer-section">
-        <h4>Seguici</h4>
+        <h4>{{ 'footer.follow' | i18n }}</h4>
         <div class="social-icons">
           <a href="https://www.instagram.com/villaluisetta/" target="_blank" class="social-link" aria-label="Instagram">
             <svg class="social-icon instagram" viewBox="0 0 24 24" fill="currentColor">
@@ -135,7 +135,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2024 Villa Luisetta. Tutti i diritti riservati.</p>
+      <p [innerHTML]="'footer.copyright' | i18n"></p>
       <p class="piva">P.IVA 03242380800</p>
     </div>
   </footer>

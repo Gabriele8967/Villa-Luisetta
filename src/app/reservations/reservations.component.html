@@ -6,9 +6,9 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 class="hero-title">Prenota il Tuo Tavolo</h1>
+        <h1 class="hero-title">{{ 'reservations.title' | i18n }}</h1>
         <p class="hero-subtitle">
-          Scegli l'orario perfetto per la tua esperienza culinaria a Villa Luisetta
+          {{ 'reservations.subtitle' | i18n }}
         </p>
         <hr class="hero-ornament">
       </div>
@@ -24,17 +24,17 @@
           </div>
           
           <div class="slot-content">
-            <h3 class="slot-label">{{ slot.label }}</h3>
+            <h3 class="slot-label">{{ 'reservations.slot.label' | i18n }}</h3>
             
             <div class="slot-notice">
               <span class="notice-icon">⏰</span>
-              <span class="notice-text">Il tavolo deve essere liberato entro la fine dell'orario prenotato</span>
+              <span class="notice-text">{{ 'reservations.slot.notice' | i18n }}</span>
             </div>
           </div>
           
           <div class="slot-cta">
             <span class="cta-icon">📱</span>
-            <span class="cta-text">Prenota via WhatsApp</span>
+            <span class="cta-text">{{ 'reservations.book.whatsapp' | i18n }}</span>
             <span class="cta-arrow">→</span>
           </div>
         </div>
@@ -44,29 +44,29 @@
     <!-- Info Section -->
     <section class="info-section">
       <div class="info-card">
-        <h2 class="info-title">Informazioni Prenotazioni</h2>
+        <h2 class="info-title" i18n="@@reservations.info.title">Informazioni Prenotazioni</h2>
         <div class="info-content">
           <div class="info-item">
             <span class="info-icon">📞</span>
             <div class="info-text">
-              <strong>Conferma Immediata</strong>
-              <p>Riceverai conferma della prenotazione tramite WhatsApp</p>
+              <strong i18n="@@reservations.info.confirm.title">Conferma Immediata</strong>
+              <p i18n="@@reservations.info.confirm.text">Riceverai conferma della prenotazione tramite WhatsApp</p>
             </div>
           </div>
           
           <div class="info-item">
             <span class="info-icon">⚠️</span>
             <div class="info-text">
-              <strong>Politica di Puntualità</strong>
-              <p>Si prega di rispettare l'orario di prenotazione. Trascorsi 15 minuti dall'orario concordato, il tavolo verrà rilasciato per consentire l'accoglienza di altri ospiti</p>
+              <strong i18n="@@reservations.policy.title">Politica di Puntualità</strong>
+              <p i18n="@@reservations.policy.text">Si prega di rispettare l'orario di prenotazione. Trascorsi 15 minuti dall'orario concordato, il tavolo verrà rilasciato per consentire l'accoglienza di altri ospiti</p>
             </div>
           </div>
           
           <div class="info-item">
             <span class="info-icon">🍽️</span>
             <div class="info-text">
-              <strong>Menu Completo</strong>
-              <p>Tutti i nostri menu sono disponibili in ogni fascia oraria</p>
+              <strong i18n="@@reservations.info.menu.title">Menu Completo</strong>
+              <p i18n="@@reservations.info.menu.text">Tutti i nostri menu sono disponibili in ogni fascia oraria</p>
             </div>
           </div>
         </div>
@@ -80,25 +80,25 @@
       <div class="footer-section">
         <h3>Villa Luisetta</h3>
         <p class="footer-description">
-          Tradizione in evoluzione nel cuore dell'eleganza italiana
+          {{ 'footer.description' | i18n }}
         </p>
         <div class="contact-info">
           <p class="contact-item">
             <span class="contact-icon">✉</span>
-            villaluisettareservations&#64;gmail.com
+            {{ 'contact.email' | i18n }}
           </p>
           <p class="contact-item">
             <span class="contact-icon">📍</span>
             <a href="https://maps.google.com/?q=Via+Roma+86,+Palmi,+Italy" target="_blank" class="address-link">
-              Via Roma 86, Palmi
-              <span class="map-hint">📍 Ottieni indicazioni</span>
+              {{ 'contact.address' | i18n }}
+              <span class="map-hint">{{ 'footer.map.hint' | i18n }}</span>
             </a>
           </p>
         </div>
       </div>
       
       <div class="footer-section">
-        <h4>Seguici</h4>
+        <h4>{{ 'footer.follow' | i18n }}</h4>
         <div class="social-icons">
           <a href="https://www.instagram.com/villaluisetta/" target="_blank" class="social-link" aria-label="Instagram">
             <svg class="social-icon instagram" viewBox="0 0 24 24" fill="currentColor">

@@ -5,27 +5,27 @@
     <main class="main-content">
         <div class="hero-section">
             <div class="hero-text">
-                <p class="hero-title">Un nuovo concept di ospitalità e degustazione, immerso tra l'arte e la storia della città di Palmi</p>
+                <p class="hero-title">{{ 'home.hero.title' | i18n }}</p>
                 <hr class="hero-ornament">
             </div>
         </div>
         
         <div class="button-container">
             <button class="main-button" routerLink="/apartments">
-                <div class="button-text">Stanze</div>
-                <div class="button-subtitle">Soggiorna con comfort</div>
+                <div class="button-text">{{ 'home.button.rooms' | i18n }}</div>
+                <div class="button-subtitle">{{ 'home.button.rooms.subtitle' | i18n }}</div>
             </button>
             <button class="main-button" routerLink="/gallery">
-                <div class="button-text">Gallery</div>
-                <div class="button-subtitle">Scopri la bellezza</div>
+                <div class="button-text">{{ 'home.button.gallery' | i18n }}</div>
+                <div class="button-subtitle">{{ 'home.button.gallery.subtitle' | i18n }}</div>
             </button>
             <button class="main-button" routerLink="/food">
-                <div class="button-text">Aperitivi</div>
-                <div class="button-subtitle">Esperienza culinaria</div>
+                <div class="button-text">{{ 'home.button.food' | i18n }}</div>
+                <div class="button-subtitle">{{ 'home.button.food.subtitle' | i18n }}</div>
             </button>
             <button class="main-button" routerLink="/cocktails">
-                <div class="button-text">Bar</div>
-                <div class="button-subtitle">Gin, Amari e Grappe</div>
+                <div class="button-text">{{ 'home.button.bar' | i18n }}</div>
+                <div class="button-subtitle">{{ 'home.button.bar.subtitle' | i18n }}</div>
             </button>
         </div>
     </main>
@@ -36,25 +36,25 @@
             <div class="footer-section">
                 <h3>Villa Luisetta</h3>
                 <p class="footer-description">
-                    Tradizione in evoluzione nel cuore dell'eleganza italiana
+                    {{ 'footer.description' | i18n }}
                 </p>
                 <div class="contact-info">
                     <p class="contact-item">
                         <span class="contact-icon">✉</span>
-                        villaluisettareservations&#64;gmail.com
+                        {{ 'contact.email' | i18n }}
                     </p>
                     <p class="contact-item">
                         <span class="contact-icon">📍</span>
                         <a href="https://maps.google.com/?q=Via+Roma+86,+Palmi,+Italy" target="_blank" class="address-link">
-                            Via Roma 86, Palmi
-                            <span class="map-hint">📍 Ottieni indicazioni</span>
+                            {{ 'contact.address' | i18n }}
+                            <span class="map-hint">{{ 'footer.map.hint' | i18n }}</span>
                         </a>
                     </p>
                 </div>
             </div>
             
             <div class="footer-section">
-                <h4>Seguici</h4>
+                <h4>{{ 'footer.follow' | i18n }}</h4>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/villaluisetta/" target="_blank" class="social-link" aria-label="Instagram">
                         <svg class="social-icon instagram" viewBox="0 0 24 24" fill="currentColor">
@@ -76,7 +76,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 Villa Luisetta. Tutti i diritti riservati.</p>
+            <p [innerHTML]="'footer.copyright' | i18n"></p>
             <p class="piva">P.IVA 03242380800</p>
         </div>
     </footer>
