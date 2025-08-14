@@ -72,7 +72,7 @@ export class Cocktails {
       id: 8,
       name: '075 Carati 75cl',
       description: 'Bottiglia Prosecco 0,75 litri',
-      price: '€10',
+      price: '€15',
       showAllergens: false,
       allergens: ['Solfiti']
     }
