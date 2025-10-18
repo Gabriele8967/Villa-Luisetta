@@ -20,7 +20,7 @@ export class Apartments {
       id: 1,
       name: 'CILEA',
       description: '',
-      price: '€50/persona/notte',
+      price: '€60/persona/notte',
       category: 'superior',
       size: '30m²',
       images: [
@@ -38,7 +38,7 @@ export class Apartments {
       id: 2,
       name: 'MARINELLA',
       description: '',
-      price: '€40/persona/notte',
+      price: '€50/persona/notte',
       category: 'classic',
       size: '20m²',
       images: [
@@ -55,7 +55,7 @@ export class Apartments {
       id: 3,
       name: 'MANFROCE',
       description: '',
-      price: '€50/persona/notte',
+      price: '€60/persona/notte',
       category: 'superior',
       size: '30m²',
       images: [
@@ -72,7 +72,7 @@ export class Apartments {
       id: 4,
       name: 'ROVAGLIOSO',
       description: '',
-      price: '€40/persona/notte',
+      price: '€50/persona/notte',
       category: 'classic',
       size: '20m²',
       images: [
@@ -89,7 +89,7 @@ export class Apartments {
       id: 5,
       name: 'ULIVARELLA',
       description: '',
-      price: '€50/persona/notte',
+      price: '€60/persona/notte',
       category: 'superior',
       size: '30m²',
       images: [
@@ -110,7 +110,7 @@ export class Apartments {
       id: 6,
       name: 'PIETRE NERE',
       description: '',
-      price: '€50/persona/notte',
+      price: '€60/persona/notte',
       category: 'superior',
       size: '30m²',
       images: [
